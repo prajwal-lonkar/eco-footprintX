@@ -1,0 +1,174 @@
+@use '@styles/abstracts' as *;
+
+.supplierTabWrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  p {
+    color: $color-content-secondary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+}
+.tableHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: $spacing-xl-small;
+  align-self: stretch;
+  gap:$spacing-md;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+  border-bottom: $border-width-thin solid $color-border-table;
+  background: $color-dark-forest-50;
+
+  h1 {
+    color: $color-content-secondary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+.tableHead h1:nth-child(1),
+.tableRow .cell:nth-child(1) {
+  width: 110px;
+}
+.tableHead h1:nth-child(2),
+.tableRow .cell:nth-child(2) {
+  width: 189px;
+}
+.tableHead h1:nth-child(3),
+.tableRow .cell:nth-child(3) {
+  width: 110px;
+}
+.tableHead h1:nth-child(4),
+.tableRow .cell:nth-child(4) {
+   width: 125px;
+   display: flex;
+   overflow: visible;
+}
+.tableHead h1:nth-child(5),
+.tableRow .cell:nth-child(5) {
+  width: 230px;
+  min-width: 230px;
+  overflow: visible;
+}
+.tableHead h1:nth-child(6),
+.tableRow .cell:nth-child(6) {
+  width: 110px;
+}
+.tableHead h1:nth-child(7),
+.tableRow .cell:nth-child(7) {
+  width: 60px;
+}
+.badgeSubmission {
+  font-size: $font-size-xs;
+}
+
+.submissionStatusContent {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.reviewUpdateButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border: 1px solid #d9e1de;
+  border-radius: $border-radius-base;
+  background: $color-white;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-xxs;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: -5px;
+
+  img {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+  }
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-xl-small;
+  gap:$spacing-md;
+
+  cursor: pointer;
+  width: 100%;
+  &:hover {
+    background: $color-bg-secondary;
+  }
+}
+
+.cell {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: $spacing-base 0;
+}
+.emptyStateWrapper {
+  display: flex;
+  padding: 48px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  .addBtn {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-xs;
+    border-radius: $border-radius-base;
+    border: $border-width-thin solid $color-primary;
+    background: $color-primary;
+    color: $color-white;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs; /* 114.286% */
+  }
+}
+
+.tableRow:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.tableRow:last-child:hover {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width:1299px){
+  .tableHead h1:nth-child(5),
+.tableRow .cell:nth-child(5) {
+  width: 222px;
+   min-width: 230px;
+}
+}

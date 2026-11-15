@@ -1,0 +1,774 @@
+@use '@styles/abstracts' as *;
+
+.skeletonHeadCell {
+  height: 16px;
+  background: $color-skeleton;
+  border-radius: $border-radius-md;
+  width: 100%;
+}
+
+.skeletonCell {
+  height: 20px;
+  background: $color-skeleton;
+  border-radius: $border-radius-md;
+  width: 200px;
+}
+@media screen and (max-width: 1500px) {
+  .skeletonCell {
+    width: 120px;
+  }
+}
+.cardTable {
+  background: $color-white;
+  // border: $border-width-thin solid $color-skeleton;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  overflow-x: auto;
+}
+.tableHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: $spacing-xl-small;
+
+  gap: $spacing-xl;
+  align-self: stretch;
+
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+  border-bottom: $border-width-thin solid $color-border-table;
+  background: $color-dark-forest-50;
+
+  h1 {
+    color: $color-content-secondary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    margin: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+.tableBody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: $spacing-base $spacing-xl-small;
+  border-top: $border-width-thin solid #f0f0f0;
+  width: 100%;
+}
+.tableRowSupplier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-base $spacing-xl-small;
+
+  width: 100%;
+}
+// company profile
+
+.companySkeletonWrapper {
+  padding: $spacing-xl-small;
+}
+.productSkeletonWrapper {
+  padding: 0;
+}
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.skeletonProfileImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $color-skeleton;
+}
+
+.headerTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.skeletonTitle {
+  width: 220px;
+  height: 20px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+.skeletonDate {
+  width: 100px;
+  height: 16px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+.infoGrid {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: $spacing-xl;
+  margin-top: $spacing-xl;
+}
+
+.skeletonInfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxxs-medium;
+}
+
+.skeletonLabel {
+  width: 140px;
+  height: 14px;
+  background: $color-skeleton;
+  border-radius: $border-radius-md;
+}
+
+.skeletonValue {
+  width: 220px;
+  height: 18px;
+  background: $color-skeleton;
+  border-radius: $border-radius-md;
+}
+
+//Profile Edit
+.companyEditSkeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+/* Header Row */
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.skeletonBackBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+.skeletonTitleWide {
+  width: 180px;
+  height: 22px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+/* Profile Header Card */
+.profileHeaderCard {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl-small;
+}
+
+.skeletonProfileImage {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: $color-skeleton;
+}
+
+.profileTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.skeletonCompanyName {
+  width: 180px;
+  height: 20px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+.skeletonDate {
+  width: 120px;
+  height: 16px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+/* Form Grid */
+.formGridSkeleton {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.skeletonFormItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.skeletonLabel {
+  width: 150px;
+  height: 14px;
+  background: $color-skeleton;
+  border-radius: $border-radius-base;
+}
+
+.skeletonInput {
+  width: 100%;
+  height: 42px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+.skeletonTextareaBlock {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.skeletonTextarea {
+  width: 100%;
+  height: 90px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+/* Action Buttons */
+.actionRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+.skeletonButton {
+  width: 130px;
+  height: 40px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+/* Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animatepulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Main Wrapper */
+.companyEditSkeletonWrapper {
+  width: 100%;
+  padding: $spacing-xl;
+  background: $color-white;
+  border-radius: $border-radius-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+/* Back Button Row */
+.headerRow {
+  display: flex;
+  align-items: center;
+}
+
+.skeletonBackBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: $border-radius-md;
+  background-color: #f0f0f0;
+}
+
+/* Profile Header Card */
+.profileHeaderCard {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.skeletonProfileImage {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+
+.profileTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.skeletonCompanyName {
+  width: 180px;
+  height: 20px;
+  border-radius: $border-radius-md;
+  background-color: #f0f0f0;
+}
+
+.skeletonDate {
+  width: 120px;
+  height: 16px;
+  border-radius: $border-radius-md;
+  background-color: #f0f0f0;
+}
+
+/* Form Grid */
+.formGridSkeleton {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-xl;
+}
+
+.skeletonFormItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.skeletonLabel {
+  width: 120px;
+  height: 14px;
+  border-radius: $border-radius-base;
+  background-color: #f0f0f0;
+}
+
+.skeletonInput {
+  width: 100%;
+  height: 36px;
+  border-radius: $border-radius-md;
+  background-color: #f0f0f0;
+}
+
+/* Full-width Textarea */
+.skeletonTextareaBlock {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.skeletonTextarea {
+  width: 100%;
+  height: 80px;
+  border-radius: $border-radius-md;
+  background-color: #f0f0f0;
+}
+
+/* Action Buttons Row */
+.actionRow {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-lg;
+}
+
+.skeletonButton {
+  width: 130px;
+  height: 40px;
+  border-radius: $border-radius-md;
+  background-color: #f0f0f0;
+}
+
+/* Optional overrides for other skeletons */
+.skeletonHeadCell,
+.skeletonCell {
+  background: $color-skeleton;
+  border-radius: $border-radius-md;
+}
+
+.cardTable {
+  background: $color-white;
+  // border: $border-width-thin solid $color-skeleton;
+  border-radius: 10px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+//how to recycle instruction
+.recycleSkeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  width: 100%;
+  border-radius: $border-radius-lg;
+  background: $color-white;
+}
+
+.recycleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md;
+  border: $border-width-thin solid #eaeaea;
+  border-radius: $border-radius-md;
+}
+
+.recycleText {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxxs-medium;
+  width: 70%;
+}
+
+.recycleActions {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.recycleAddRow {
+  border: $border-width-thin dashed $color-gray-border-light;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+}
+
+/* Skeleton primitives */
+.skeletonTitle {
+  width: 160px;
+  height: 14px;
+  border-radius: $border-radius-base;
+  background: $color-gray-progress;
+}
+
+.skeletonSubtitle {
+  width: 260px;
+  height: 12px;
+  border-radius: $border-radius-base;
+  background: $color-gray-progress;
+}
+
+.skeletonLineShort {
+  width: 120px;
+  height: 12px;
+  border-radius: $border-radius-base;
+  background: $color-gray-progress;
+}
+
+.skeletonLineLong {
+  width: 100%;
+  height: 12px;
+  border-radius: $border-radius-base;
+  background: $color-gray-progress;
+}
+
+.skeletonIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: $border-radius-base;
+  background: $color-gray-progress;
+}
+
+.skeletonAddText {
+  width: 180px;
+  height: 12px;
+  border-radius: $border-radius-base;
+  background: $color-gray-progress;
+}
+//consumer skeleton
+.consumerSkeletonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.consumerHeader {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.skeletonLogo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: $color-skeleton;
+}
+
+.horizontalSkeletonLine {
+  height: 1px;
+  background: $color-gray-progress;
+  margin: $spacing-lg 0;
+}
+
+.consumerContent {
+  display: flex;
+  gap: $spacing-3xl;
+  height: 798px;
+
+  width: 100%;
+}
+
+.consumerLeft {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.skeletonProductImage {
+  height: 100%;
+  border-radius: 24px;
+  background: $color-skeleton;
+}
+
+.skeletonNote {
+  height: 40px;
+  border-radius: $border-radius-xl;
+  background: $color-skeleton;
+}
+
+.consumerRight {
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl-small;
+}
+
+.skeletonProductTitle {
+  width: 240px;
+  height: 24px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+.skeletonSectionTitle {
+  width: 200px;
+  height: 18px;
+  border-radius: $border-radius-md;
+  background: $color-skeleton;
+}
+
+.impactSkeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+}
+
+.impactSkeletonCard {
+  height: 120px;
+  border-radius: $border-radius-xxl;
+  background: $color-skeleton;
+}
+
+.recycleSkeletonRow {
+  display: flex;
+  gap: $spacing-md;
+  align-items: flex-start;
+
+  border-radius: $border-radius-lg;
+  padding: $spacing-md;
+  border: $border-width-thin solid #eaeaea;
+}
+
+.skeletonStepNumber {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: $color-skeleton;
+}
+
+.recycleSkeletonText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxxs-medium;
+}
+
+//component detail
+
+.componentCard {
+  background: $color-white;
+  width: 100%;
+}
+
+.componentTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-xl;
+}
+
+.componentTitleBlock {
+  flex: 1;
+  margin-left: $spacing-lg;
+}
+
+.skeletonTitle {
+  width: 200px;
+  height: 20px;
+  border-radius: $border-radius-base;
+  background: #e0e0e0;
+  margin-top: $spacing-xxxs-medium;
+}
+
+.componentActions {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.skeletonButtonLarge {
+  width: 180px;
+  height: 40px;
+  border-radius: $border-radius-lg;
+  background: #e0e0e0;
+}
+
+.skeletonButtonSmall {
+  width: 100px;
+  height: 40px;
+  border-radius: $border-radius-lg;
+  background: #e0e0e0;
+}
+
+.componentInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-xl-small;
+
+  border: $border-width-thin solid $color-gray-border-light;
+  padding: $spacing-lg;
+  border-radius: $border-radius-xl;
+}
+
+.skeletonInfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxxs-medium;
+}
+
+.skeletonLabelSmall {
+  width: 120px;
+  height: 12px;
+  border-radius: $border-radius-base;
+  background: #e0e0e0;
+}
+//summary
+.summarySkeletonWrapper {
+  width: 100%;
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+}
+
+.impactCardSkeleton {
+  border-radius: $border-radius-xl;
+  padding: $spacing-lg;
+
+  border: $border-width-thin solid $color-gray-border-light;
+}
+
+.cardHeader {
+  display: flex;
+  gap: $spacing-xs;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.skeletonTitleLarge {
+  height: 28px;
+  width: 200px;
+  border-radius: $border-radius-md;
+  background: #e0e0e0;
+}
+
+.skeletonTitleSmall {
+  height: 16px;
+  width: 100%;
+  border-radius: $border-radius-base;
+  background: #e0e0e0;
+}
+
+.skeletonValueLarge {
+  height: 36px;
+  width: 100%;
+  border-radius: $border-radius-md;
+  background: #e0e0e0;
+  margin: $spacing-md 0;
+}
+
+.skeletonProgressBar {
+  height: 8px;
+  width: 100%;
+  border-radius: $border-radius-base;
+  background: #e0e0e0;
+  margin-bottom: $spacing-md;
+}
+.skeletonCardLineMedium {
+  height: 65px;
+
+  border-radius: $border-radius-base;
+  background: $color-gray-progress;
+}
+.cardFooter {
+  display: flex;
+  gap: $spacing-xs;
+  margin-top: $spacing-md;
+}
+
+.skeletonBadge {
+  height: 24px;
+  width: 100%;
+  border-radius: $border-radius-md;
+  background: #e0e0e0;
+}
+@media (max-width: 769px) {
+  .consumerContent {
+    height: auto;
+    flex-direction: column;
+    padding: $spacing-xl;
+  }
+
+  .consumerLeft {
+    height: 250px;
+    width: 100%;
+  }
+  .consumerRight {
+    width: 100%;
+  }
+}
+/* Skeleton Loading Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animatepulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.wcm-overlay {
+  z-index: 2000 !important;
+}
+
+:root {
+  --wcm-z-index: 2000 !important;
+}

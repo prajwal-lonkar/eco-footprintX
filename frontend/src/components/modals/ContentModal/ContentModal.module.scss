@@ -1,0 +1,96 @@
+@use '@styles/abstracts' as *;
+
+:global(.content-modal .modal-content) {
+  padding: $spacing-3xl;
+  padding-bottom: 0;
+  overflow-y: auto;
+}
+
+:global(.content-modal .modal-header) {
+  padding: 0;
+  border: none;
+  margin-bottom: $spacing-3xl;
+}
+
+:global(.content-modal .modal-header .btn-close) {
+  width: 25px;
+  height: 25px;
+  background: url('/src/assets/icons/x-close-black.svg') center center no-repeat;
+  background-size: 25px 25px;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  opacity: 1;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  transition: opacity 0.2s;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}
+
+:global(.content-modal .modal-title) {
+  @include text-base;
+  font-weight: $font-weight-semibold;
+  font-size: 36px;
+  line-height: 1.15;
+}
+
+:global(.content-modal .modal-body) {
+  padding: 0;
+  overflow-y: scroll;
+  height: auto;
+  padding-bottom: $spacing-3xl;
+  @include flex-column($spacing-3xl);
+}
+
+.lastUpdated {
+  @include text-base;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  line-height: $line-height-sm;
+}
+
+.separator {
+  border-bottom: $border-width-thin solid #e3e3e3;
+}
+
+.contentItem {
+  @include flex-column($spacing-lg);
+}
+
+.contentTitle {
+  @include text-base;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-lg;
+  line-height: $line-height-sm;
+}
+
+.contentDescription {
+  @include text-base;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  line-height: $line-height-sm;
+
+  ul {
+    margin: $spacing-md 0;
+    padding-left: $spacing-xl;
+  }
+
+  li {
+    margin-bottom: $spacing-sm;
+  }
+
+  a {
+    color: #0066cc;
+    text-decoration: underline;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #0052a3;
+    }
+  }
+}

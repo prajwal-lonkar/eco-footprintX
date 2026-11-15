@@ -1,0 +1,194 @@
+@use '@styles/abstracts' as *;
+
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: $font-family-base;
+  background: $color-white;
+}
+
+/* LEFT PANEL */
+.brand {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  padding: $spacing-3xl;
+
+  background-image: url('../../assets/images/backgroundImg.webp');
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-origin: border-box;
+  background-clip: border-box;
+  object-fit: cover;
+}
+.left {
+  display: flex;
+
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.leftContent {
+  display: flex;
+  gap: 23px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.brandHeading {
+  text-align: center;
+  display: flex;
+
+  gap: 5.35px;
+  flex-direction: column;
+
+  h2 {
+    color: #165b33;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: 100%; /* 50px */
+    text-transform: capitalize;
+    margin-bottom: 0;
+  }
+
+  span {
+    font-family: General Sans;
+    font-weight: $font-weight-medium;
+    font-style: Medium;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #165b33;
+  }
+}
+
+.logoCircle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #a7f3d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #165b33;
+  font-size: 40px;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  width: 50%;
+  height: 100%;
+
+  opacity: 1;
+}
+
+.scrollWrapperParent {
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  background: #e5f5ed;
+  background-image: url('../../assets/images/backgroundImg1.svg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  border-radius: 24px;
+  box-shadow:
+  0 166px 47px 0 rgba(186, 186, 186, 0),
+  0 106px 43px 0 rgba(186, 186, 186, 0.01),
+  0 60px 36px 0 rgba(186, 186, 186, 0.05),
+  0 27px 27px 0 rgba(186, 186, 186, 0.09),
+  0 7px 15px 0 rgba(186, 186, 186, 0.1);
+  min-height: 0;
+}
+
+.scrollWrapper {
+  height: 100%;
+  width: 100%;
+  padding: 57px 75px 45px 75px;
+
+  @media (max-width: 1400px) {
+    padding: 37px 31px 25px 31px;
+  }
+
+  @media (max-width: 900px) {
+    padding: 17px 0 7px 0;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 0 0 0;
+  }
+  
+  overflow: auto;
+  min-height: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(186, 186, 186, 0.6) transparent;
+}
+
+.scrollWrapperFlexStart {
+  align-items: flex-start;
+}
+
+.scrollWrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollWrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to right,
+    rgba(186, 186, 186, 0.3) 0%,
+    rgba(186, 186, 186, 0.6) 100%
+  );
+  border-radius: $border-radius-base;
+}
+
+.scrollWrapper::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to right,
+    rgba(186, 186, 186, 0.4) 0%,
+    rgba(186, 186, 186, 0.7) 100%
+  );
+}
+
+@media screen and (min-width: 2060px) {
+  .scrollWrapperParent {
+    height: 960px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .brand {
+    gap: 100px;
+  }
+  .left {
+    justify-content: flex-end;
+  }
+  .right {
+    justify-content: flex-start;
+  }
+}

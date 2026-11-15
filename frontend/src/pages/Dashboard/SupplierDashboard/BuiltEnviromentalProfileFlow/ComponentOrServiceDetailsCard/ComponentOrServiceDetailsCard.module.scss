@@ -1,0 +1,136 @@
+@use '@styles/abstracts' as *;
+
+.fieldItem {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: $spacing-xxxs;
+  min-width: 0;
+}
+
+.dataLabelWithIcon {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xxxs-medium;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  font-style: normal;
+  line-height: normal;
+  color: $color-gray-dark;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.dataLabel {
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  font-style: normal;
+  line-height: normal;
+  color: $color-gray-dark;
+  margin: 0;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.fieldValue {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  font-style: normal;
+  line-height: normal;
+  color: $color-content-primary;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.parentFormCard {
+  display: flex;
+  padding: $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  background: $color-white;
+}
+
+.infoIcon {
+  margin-bottom: $spacing-xxs;
+  margin-left: 0 !important;
+}
+
+@media (min-width: 1280px) {
+  .parentFormCard .fieldRow {
+    display: grid;
+    grid-template-columns: minmax(140px, 1fr) minmax(180px, 1fr) minmax(
+        100px,
+        1fr
+      ) minmax(100px, 1fr);
+    gap: $spacing-lg;
+    width: 100%;
+  }
+
+
+.parentFormCard .dataLabel {
+    white-space: nowrap !important;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .parentFormCard .dataLabelWithIcon {
+    white-space: nowrap !important;
+    flex-shrink: 0;
+    min-width: fit-content;
+    max-width: 100%;
+  }
+
+  .parentFormCard .dataLabelWithIcon .dataLabel {
+    white-space: nowrap !important;
+    display: inline-block;
+  }
+}
+
+.fieldRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: $spacing-xs;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  padding: $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  background: $color-gray-light;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrowIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  transition: transform $transition-duration ease;
+  flex-shrink: 0;
+}
+
+.arrowExpanded {
+  transform: rotate(180deg);
+}

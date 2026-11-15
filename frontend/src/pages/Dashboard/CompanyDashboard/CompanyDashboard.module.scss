@@ -1,0 +1,193 @@
+@use '@styles/abstracts' as *;
+
+.mainWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  align-items: stretch;
+  overflow: hidden;
+  .sideNav {
+    display: flex;
+    width: 200px;
+    height: 100vh;
+    padding: $spacing-xl 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+
+    background: #344b44;
+    .sideNavTop {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-3xl;
+      align-self: stretch;
+    }
+    .sideNavBottom {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+    }
+    .sideNavHeader {
+      display: flex;
+      padding: 0 $spacing-xl;
+      align-items: center;
+      gap: 6.545px;
+      align-self: stretch;
+    }
+
+    .sideNavContent {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+    }
+    .title {
+      color: $color-white;
+      font-family: $font-family-base;
+      font-size: 15.273px;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      line-height: normal;
+      letter-spacing: -0.153px;
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+    .sideNavContent {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+    }
+
+    .buttonwrapper {
+      display: flex;
+      padding-left: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-xs;
+      align-self: stretch;
+    }
+    .navLink {
+      color: #dce7e3;
+      text-decoration: none;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $border-radius-lg;
+      display: block;
+      cursor: pointer;
+    }
+
+    .buttonwrapper .navLink {
+      display: flex;
+      padding: $spacing-md;
+      /* flex-direction: column; */
+      align-items: flex-start;
+      gap: $spacing-xs;
+
+      align-self: stretch;
+
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+
+      background: transparent;
+      border: none;
+    }
+
+    .buttonwrapper .navLink.active {
+      display: flex;
+      padding: $spacing-md;
+
+      align-self: stretch;
+      border-radius: $border-radius-lg 0 0 $border-radius-lg;
+      background: #596e67;
+    }
+    .sideNavBottom {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+
+      .linkLogout {
+        display: flex;
+        padding: $spacing-md $spacing-xl;
+        align-items: center;
+        gap: $spacing-xs;
+        align-self: stretch;
+        color: $color-white;
+        font-family: $font-family-base;
+        font-size: $font-size-xs;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        .icon {
+          display: flex;
+          width: 14px;
+          height: 14px;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .profile {
+        display: flex;
+        padding: $spacing-md $spacing-xl;
+        align-items: center;
+        gap: $spacing-xs;
+        align-self: stretch;
+
+        cursor: pointer;
+        .profileContent {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+          h1 {
+            color: $color-white;
+            font-family: $font-family-base;
+            font-size: $font-size-xs;
+            font-style: normal;
+            font-weight: $font-weight-regular;
+            line-height: normal;
+            align-self: stretch;
+            word-break: break-all;
+            margin-bottom: 0;
+          }
+          h2 {
+            color: $color-content-disabled;
+            font-family: $font-family-base;
+            font-size: $font-size-xxs;
+            font-style: normal;
+            font-weight: $font-weight-regular;
+            line-height: normal;
+            align-self: stretch;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .workspace {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+    height: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .logoutButton {
+    background: $color-primary;
+  }
+}

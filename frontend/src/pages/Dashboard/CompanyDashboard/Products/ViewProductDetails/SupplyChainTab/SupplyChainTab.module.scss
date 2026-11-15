@@ -1,0 +1,34 @@
+@use '@styles/abstracts' as *;
+
+.supplyChainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 210px;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  background: $color-white;
+  background-image: url('@assets/images/Dot Grid.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: default !important;
+}
+
+.comingSoonBtn {
+  display: inline-flex;
+  padding: $spacing-sm $spacing-xl;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  border-radius: $border-radius-lg;
+  border: $border-width-thin dashed #a4bfb6;
+  background: $cool-green-50;
+
+  color: $color-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  cursor: default !important;
+}

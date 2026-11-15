@@ -1,0 +1,47 @@
+@use '@styles/abstracts' as *;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid #e8eceb;
+  background: $color-gray-light;
+}
+
+.accordionHeader {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  cursor: pointer;
+  text-align: left;
+}
+
+.content {
+  width: 100%;
+  margin-top: -$spacing-xxxs;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+}
+
+.content :global(.summaryWrapper) {
+  margin-top: 0;
+  padding-top: 0;
+  border-radius: 0;
+  background: transparent;
+}

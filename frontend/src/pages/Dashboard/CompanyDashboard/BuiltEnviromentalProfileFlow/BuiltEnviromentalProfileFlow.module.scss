@@ -1,0 +1,503 @@
+@use '@styles/abstracts' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: $color-gray-light;
+}
+
+.content {
+  padding: calc(68px + $spacing-lg) $spacing-lg $spacing-lg;
+}
+
+.pageHeader {
+  display: flex;
+  position: fixed;
+
+  height: 68px;
+  width: 100%;
+  align-items: center;
+  padding: $spacing-lg 0;
+  border-bottom: $border-width-thin solid $color-border-section;
+  background: $color-white;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  background: transparent;
+  border: none;
+  padding-left: $spacing-lg;
+  color: $color-gray-role-label;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-duration ease;
+}
+
+.breadcrumb:hover {
+  opacity: $opacity-light;
+}
+
+.arrowIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.layout {
+  display: flex;
+  gap: $spacing-lg;
+  flex: 1;
+  min-height: 0;
+  height: calc(100vh - 120px);
+  max-height: calc(100vh - 120px);
+}
+
+.stepSidebar {
+  width: 320px;
+  height: 100%;
+  background: $color-white;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  padding: $spacing-xl $spacing-lg;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.stepTitle {
+  margin: 0 0 $spacing-lg;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  font-style: normal;
+  line-height: normal;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-lg;
+}
+
+.stepList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+.stepItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  border-radius: $border-radius-lg;
+}
+
+.stepIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  display: block;
+  flex-shrink: 0;
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  // gap: 4px;
+}
+
+.stepLabel {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}
+
+.stepDescription {
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  color: $color-gray-dark;
+  margin: 0;
+  line-height: 1.4;
+}
+.subStepList {
+  margin-top: $spacing-md;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  padding-left: 0;
+}
+.activeStep .stepLabel {
+  color: $color-content-primary;
+  font-weight: $font-weight-medium;
+}
+
+.completedStep .stepLabel {
+  color: $color-content-primary;
+  font-weight: $font-weight-medium;
+}
+
+.clickableStep {
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: $color-bg-light;
+  }
+}
+
+.mainPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* COMMON STEP STYLES - Shared across all step components */
+
+.searchWrapper {
+  @include flex-column($spacing-xs);
+  position: relative;
+  width: 100%;
+}
+
+.childcontent {
+  @include flex-column($spacing-xl);
+  width: 100%;
+  gap: $spacing-3xl;
+}
+
+.searchIconWrapper {
+  display: flex;
+  align-items: center;
+  margin-inline: 12px;
+  justify-content: center;
+  width: $icon-size-base;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.searchIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+}
+
+.searchInput {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: $spacing-xxxs 0;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+  background: transparent;
+
+  &::placeholder {
+    color: $color-gray-medium;
+  }
+
+  &:disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+// for required fields
+
+.container {
+  @include flex-column($spacing-xl);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.contentFrame {
+  @include flex-column($spacing-xl);
+  width: 100%;
+}
+
+.header {
+  @include flex-column($spacing-xs);
+}
+
+.required {
+  color: $color-error;
+}
+
+.infoIcon {
+  margin-bottom: $spacing-xxs;
+  margin-left: $spacing-xxs;
+  width: $icon-size-regular;
+  height: $icon-size-regular;
+}
+
+.formInput {
+  @include form-input-base;
+  flex: 1;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $color-gray-dark;
+    opacity: $opacity-medium;
+  }
+}
+
+.formCard {
+  @include flex-column($spacing-3xl);
+  background: $color-white;
+  display: flex;
+  align-items: flex-start;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  padding: $spacing-lg;
+  gap: $spacing-lg;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.twoColumnFields {
+  display: flex;
+  gap: $spacing-md;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  align-items: flex-start;
+}
+
+.twoColumnFields > * {
+  flex: 0 0 calc(50% - (#{$spacing-md} / 2));
+  max-width: calc(50% - (#{$spacing-md} / 2));
+}
+
+.formField {
+  @include flex-column($spacing-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.fieldLabelWithTooltip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: $spacing-xxs !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  min-height: $spacing-lg;
+}
+
+// common page title styles
+
+.pageTitle {
+  @include text-base($color-black);
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  width: 100%;
+  height: $spacing-xl;
+}
+
+.helperText {
+  @include text-base($color-gray-dark);
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  width: 100%;
+}
+
+.fieldLabel {
+  @include form-label;
+  font-size: $font-size-sm !important;
+  line-height: $line-height-sm;
+  color: $color-black;
+  width: 100%;
+
+  white-space: nowrap;
+}
+
+.labelWithIcon {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  width: 100%;
+  height: $line-height-sm;
+  flex-shrink: 0;
+}
+
+.searchInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $input-height;
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-gray-light;
+  background: $color-gray-light;
+  overflow: hidden;
+  transition: border-color $transition-duration ease;
+
+  &:focus-within {
+    border-color: $cool-Green-300;
+  }
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  width: 100%;
+  align-items: center;
+}
+
+.primaryButton,
+.secondaryButton,
+.tertiaryButton {
+  display: flex;
+  padding: $spacing-sm $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  width: 142px;
+  height: 36px;
+  border-radius: $border-radius-base;
+  color: $color-white;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-duration ease;
+  white-space: nowrap;
+}
+
+.secondaryButton {
+  border: $border-width-thin solid $cool-green-600;
+  background: transparent;
+  color: $cool-green-600;
+
+  &:hover {
+    background: $color-primary-light;
+  }
+}
+
+.tertiaryButton {
+  border: $border-width-thin solid $cool-green-600;
+  background: $background-state-disabled;
+  color: $cool-green-600;
+  cursor: pointer;
+  transition: all $transition-duration ease;
+
+  &:disabled {
+    border: $border-width-thin solid $cool-green-600;
+    background: $background-state-disabled;
+    color: $content-state-disabled;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: $opacity-hover;
+  }
+
+  &:not(:disabled) {
+    color: $cool-green-600;
+  }
+}
+
+.primaryButton {
+  border: none;
+  transition: all $transition-duration ease;
+
+  &:disabled {
+    background: $cool-green-100;
+    border: none;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  &:not(:disabled) {
+    background: $cool-green-600;
+    color: $color-white;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-primary-hover;
+    }
+  }
+}
+
+/* SEARCH DROPDOWN STYLES - Shared across all step components */
+
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  background: $color-white;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  max-height: 192px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.searchResultItem {
+  display: flex;
+  padding: $spacing-md $spacing-lg;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  width: 100%;
+  height: $input-height;
+  min-height: $input-height;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: $color-bg-light;
+  }
+}

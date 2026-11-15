@@ -1,0 +1,462 @@
+@use '@styles/abstracts' as *;
+
+.modalContent {
+    border-radius: $border-radius-xxl;
+    background: $color-white;
+    min-width: 1000px;
+    /* Shallow / Below */
+    box-shadow: $shadow-shallow-below;
+    display: inline-flex;
+    padding: $spacing-xl;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: $spacing-3xl;
+    align-self: center;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    align-self: stretch;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-xxxs-small;
+    align-self: stretch;
+}
+
+.title {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-lg;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-base;
+    margin: 0;
+}
+
+.description {
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-xxl;
+    width: 391.57px;
+    margin: 0 auto;
+}
+
+.plansContainer {
+    display: flex;
+    padding: $spacing-lg;
+    align-items: center;
+    gap: $spacing-lg;
+    border-radius: $border-radius-xl;
+    background: $color-platinum-100;
+    width: 100%;
+}
+
+.planCard {
+    display: flex;
+    width: 155px;
+    height: 287px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: $border-radius-md;
+    background: $color-white;
+}
+
+.planHeader {
+    width: 100%;
+    height: 119.503px;
+    padding: $spacing-xxxs;
+    align-items: stretch;
+}
+
+.cardHeaderContent {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    gap: $spacing-xxxs;
+    top:38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscriptionCard1 {
+    width: 100%;
+    height: 111.32px;
+    object-fit: cover;
+    display: block;
+    border-radius: $border-radius-md $border-radius-md 0 0;
+}
+
+.hederimg {
+    position: relative;
+    display: block;
+}
+
+.cardHeaderTitle {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-lg;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-base;
+    margin: 0;
+}
+
+.cardHeaderIcon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: $spacing-xxxs;
+
+    img {
+        width: $icon-size-medium;
+        height: $icon-size-medium;
+    }
+
+    p {
+        color: $color-content-primary;
+        text-align: center;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-xxl;
+        white-space: nowrap;
+    }
+}
+
+.planBody {
+    display: flex;
+    padding: $spacing-md;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    margin-top: -30px;
+    height: 100%;
+}
+
+
+.planBodyContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: $spacing-lg;
+    width: 100%;
+}
+
+.planBodyContentHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .planBodyContentHeaderTitle {
+        color: $color-content-primary;
+        text-align: center;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-regular;
+        line-height: $line-height-xxl;
+    }
+
+    .planBodyContentHeaderPrice {
+        color: $color-content-primary;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        font-style: normal;
+        font-weight: $font-weight-semibold;
+        line-height: $line-height-base;
+    }
+
+    .planBodyContentHeaderSub{
+        color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xxs;
+    font-style: normal;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-xxl; 
+    align-items: flex-start;
+    }
+}
+
+
+
+.currentButton {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    flex: 1 0 0;
+    border: none;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    opacity: 0.2;
+    background: $color-plan-current-bg;
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+}
+
+.lightUpgradeButton {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    background: $color-plan-light-upgrade-bg;
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+    border: none;
+}
+
+.standardUpgradeButton {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    background: $color-plan-standard-upgrade-bg;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+    border: none;
+}
+
+.proUpgradeButton {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    background: $color-plan-pro-upgrade-bg;
+    border: none;
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+
+
+.enterpriceCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 0;
+    text-align: center;
+    flex: 1;
+    min-height: 0;
+    width: 225px;
+    margin: 0 auto;
+}
+
+.enterpriceCardTitle {
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-xxl;
+    align-self: stretch;
+    margin: 0;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enterpriceCardContactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xs;
+    width: 100%;
+    align-self: stretch;
+    margin-top: -$spacing-xl-small;
+}
+
+.enterpriceCardContact {
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+    margin: 0;
+    width: 100%;
+    align-self: stretch;
+}
+
+.enterpriseUpgradeButton {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    background: $color-plan-enterprise-upgrade-bg;
+    border: none;
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+
+.planCard:last-child {
+    width: 242px;
+}
+
+.planCard:last-child .planBody {
+    padding: $spacing-md;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.planCard:last-child .enterpriceCard {
+    width: 225px;
+    margin: 0;
+    align-items: flex-start;
+    gap: 42px;
+}
+
+.planCard:last-child .enterpriceCardTitle {
+    text-align: center;
+    width: 100%;
+}
+
+.planCard:last-child .enterpriceCardContactSection {
+    align-items: flex-start;
+    width: 100%;
+    gap: $spacing-xs;
+}
+
+.planCard:last-child .enterpriceCardContact {
+    text-align: center;
+    width: 100%;
+}
+
+.planCard:last-child .proUpgradeButton {
+    width: 100%;
+    margin-top: 0;
+}
+
+.footerButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: $spacing-lg;
+    align-self: stretch;
+}
+
+.cancleButton {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    border: $border-width-thin solid $cool-green-600;
+    color: $cool-green-600;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+    flex: 1 0 0;
+    background-color: $color-white;
+}
+
+.moreDetailsButton {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    background: $cool-green-600;
+    color: $color-white;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+    border:$border-width-thin solid $cool-green-600;
+    flex: 1 0 0;
+}
+.disabled{
+    opacity: 0.2;
+}

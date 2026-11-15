@@ -1,0 +1,515 @@
+@use '@styles/abstracts' as *;
+
+.impactCateItemWrapper,
+.impactCateItemWrapperNoData {
+  display: flex;
+  padding: $spacing-md;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-base;
+  // flex: 1 1 0;
+  min-width: 0;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  min-height: 227px;
+  background: $color-white;
+  width: 33.33%;
+}
+.impactCateItemWrapperNoData {
+  min-height: 198px;
+}
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.noImpactCardContent {
+  flex: 0 0 auto;
+}
+
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+  align-self: stretch;
+  margin-top: auto;
+}
+
+.middleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+}
+
+.ternaryBtn {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-sm $spacing-md;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: $border-radius-base;
+  background: transparent;
+  border: $border-width-thin solid $color-primary;
+  color: $color-primary;
+  text-align: center;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  width: 100%;
+}
+
+.noDataBottomSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-self: stretch;
+  margin-top: auto;
+}
+
+.noImpactBottomSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+
+  // flex: 1 0 auto;
+}
+
+.categoryHeaderWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.categoryHeader1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerRightSection {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.warningBadge {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xxxs;
+  padding: $spacing-xxxs;
+  border-radius: 100px;
+  background: $color-error-bg;
+
+  span {
+    color: $color-error;
+    font-family: $font-family-base;
+    font-size: $font-size-xxs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    letter-spacing: 0.2px;
+  }
+
+  img {
+    flex-shrink: 0;
+  }
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+
+.infoIcon {
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  top: -$spacing-xxxs-small;
+}
+
+.infoWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-self: stretch;
+
+  .impactValueContainer {
+    width: 60%;
+    max-width: 60%;
+    min-width: 0;
+    flex-shrink: 1;
+
+    > div {
+      width: 100%;
+
+      > span {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .impact {
+    color: $color-text-secondary-444;
+    font-family: $font-family-base;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+    letter-spacing: 0.64px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .unit {
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+    letter-spacing: 0.28px;
+    text-align: end;
+    white-space: nowrap;
+  }
+}
+
+.impactData {
+  display: flex;
+  padding: $spacing-xs;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  background: $color-platinum-100;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}
+
+.publishBtn {
+  display: flex;
+  padding: $spacing-sm $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  border-radius: $border-radius-base;
+  background: $color-primary;
+  color: $color-white;
+  text-align: center;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: $cool-green-100;
+    color: $color-white;
+    border-color: $cool-green-100;
+    opacity: 0.75;
+  }
+}
+
+.secondaryBtn {
+  display: flex;
+  padding: $spacing-sm $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  width: 100%;
+  border-radius: $border-radius-base;
+  background: $cool-green-100;
+  color: $color-white;
+  text-align: center;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  border: $border-width-thin solid $color-gray-border-light;
+}
+
+.twoButtonWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-base;
+  align-self: stretch;
+}
+
+.ctaLabel {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: center;
+  gap: $spacing-xs;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  background: $color-platinum-100;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}
+
+.dataLabel {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-regular;
+  line-height: normal;
+}
+
+.noImpactBox {
+  display: flex;
+  padding: $spacing-md;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: $border-radius-lg;
+  background: $color-fresh-green-50;
+
+  h3 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+
+  p {
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+}
+
+.inProgressMessage {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: center;
+  gap: $spacing-xs;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  background: $color-warning-bg;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}
+
+.dataSourceFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+}
+
+.topContent,
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+
+  .label,
+  p {
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    letter-spacing: 0.24px;
+    display: flex;
+    gap: $spacing-xxxs-small;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .value {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+
+  .dataSource {
+    display: flex;
+    padding: $spacing-xxxs $spacing-xs;
+    align-items: center;
+    gap: $spacing-xxxs;
+    border-radius: $border-radius-base;
+    border: $border-width-thin solid #a0ddf8;
+    background: #cfeefc;
+    color: #063d56;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+
+  .requestedDataSource {
+    border: $border-width-thin solid #bfbfbf;
+    background: $color-platinum-100;
+    color: #063d56;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}
+
+.progressBarWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressTrack {
+  position: relative;
+  height: 8px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #68da39 0%, #f5b02c 50%, #e6450a 100%);
+  margin-bottom: $spacing-xs;
+}
+
+.progressFill {
+  height: 8px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.progressKnob {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  top: -3.2px;
+  transform: translateX(-50%);
+}
+
+.progressLabel {
+  padding: $spacing-xs;
+  background: #eaf8e7;
+  border-radius: $border-radius-md;
+  width: 100%;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-regular;
+  line-height: normal;
+
+  span {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-sm;
+  }
+}
+
+.temporaryInfo {
+  color: $color-content-tertiary;
+  font-family: $font-family-base;
+  font-size: $font-size-xxs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  margin: 0;
+  align-self: stretch;
+}
+
+.placeholder {
+  visibility: hidden;
+}
+
+.offsetInfoPlaceholder {
+  height: 35px;
+}
+
+.offsetInfoBox {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: center;
+  gap: $spacing-base;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  background: $color-fresh-green-50;
+
+  p {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    letter-spacing: 0.24px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1500px) {
+  .infoWrap .impact {
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,90 @@
+@use '@styles/abstracts' as *;
+
+.statusBadge {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+.badge {
+  display: flex;
+  padding: $spacing-xxxs $spacing-xxxs-medium;
+  align-items: center;
+  gap: $spacing-xxxs-medium;
+  border-radius: $border-radius-base;
+  width: fit-content;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  z-index: 1;
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    padding: 0 !important;
+  }
+}
+.badgeGreen {
+  background: $color-success-bg;
+  .dot {
+    background-color: $color-success-dark;
+  }
+}
+.badgeYellow {
+  background: $color-warning-bg;
+  .dot {
+    background-color: $color-warning-dark;
+  }
+}
+.badgePurple {
+  background: $color-accent-2-bg;
+  .dot {
+    background-color: $color-accent-2;
+  }
+}
+.badgeGray {
+  background: $color-gray-light;
+
+  .dot {
+    background-color: $color-gray;
+  }
+}
+// .addButton {
+//   background: #2e5c4b;
+//   color: $color-white;
+//   border: none;
+//   border-radius: 6px;
+//   padding: 4px 12px;
+//   font-size: 14px;
+//   cursor: pointer;
+//       position: absolute;
+//     right: 7px;
+//     top: 0;
+// }
+.addButton {
+  background: #2e5c4b;
+  color: $color-white;
+  border: $border-width-thin solid #2e5c4b;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-xxxs-small;
+  /* FORCE border radius */
+  border-radius: $border-radius-base;
+
+  padding: $spacing-xxs $spacing-xxxs-medium;
+  font-size: $font-size-xs;
+  cursor: pointer;
+
+  margin-left: -15px;
+  /* Reset any interfering defaults */
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  width: 84px;
+}

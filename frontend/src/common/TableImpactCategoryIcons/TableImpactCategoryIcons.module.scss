@@ -1,0 +1,21 @@
+@use '@styles/abstracts' as *;
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex-shrink: 0;
+}
+
+.iconImg {
+  width: $icon-size-base-small;
+  height: $icon-size-base-small;
+  display: block;
+}
+
+.emptyLabel {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}

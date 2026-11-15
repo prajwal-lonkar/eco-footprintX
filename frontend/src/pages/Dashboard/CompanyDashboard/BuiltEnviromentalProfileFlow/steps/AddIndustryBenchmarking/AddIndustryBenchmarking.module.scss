@@ -1,0 +1,56 @@
+@use '@styles/abstracts' as *;
+
+.content {
+  @include flex-column($spacing-xl);
+  width: 100%;
+}
+
+.formCard {
+  @include flex-column($spacing-3xl);
+  background: $color-white;
+  display: flex;
+  align-items: flex-start;
+  border-radius: $border-radius-lg;
+  border: $border-width-thin solid $color-gray-border-light;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 0 !important;
+}
+
+.componentDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+  border-bottom: $border-width-thin solid $color-gray-border-light;
+  align-self: stretch;
+}
+
+.searchDatabaseHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  align-self: stretch;
+
+  h3 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+
+  p {
+    color: $color-gray-dark;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}

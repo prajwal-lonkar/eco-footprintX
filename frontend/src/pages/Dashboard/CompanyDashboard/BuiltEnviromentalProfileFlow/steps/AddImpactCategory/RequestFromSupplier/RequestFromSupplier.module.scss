@@ -1,0 +1,645 @@
+@use '@styles/abstracts' as *;
+.wrapper {
+  width: 100%;
+}
+.supplierForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  align-self: stretch;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  align-self: stretch;
+}
+.formGroup {
+  width: 48.5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  label {
+    color: $color-black;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm; /* 142.857% */
+  }
+
+  .inputWrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .required {
+    color: $color-error;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm;
+  }
+  input,
+  select {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base; /* 171.429% */
+    border-radius: $border-radius-base;
+    background: $color-gray-light;
+    border-radius: $border-radius-md;
+    outline: none;
+    border: none;
+    resize: none;
+    width: 100%;
+    display: flex;
+    padding: $spacing-md 22px $spacing-md $spacing-lg;
+    align-items: center;
+    gap: 350px;
+    align-self: stretch;
+  }
+  .disabledInputBox {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base; /* 171.429% */
+    border-radius: $border-radius-base;
+    opacity: 0.5;
+    background: $color-gray-light;
+  }
+
+  .disabledGroup {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .label {
+    color: $color-content-disabled;
+  }
+
+  .disabledInput {
+    color: $color-content-disabled;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base; /* 171.429% */
+    border-radius: $border-radius-base;
+    background: $color-gray-light;
+    cursor: not-allowed !important;
+  }
+  .error {
+    color: $color-error;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-sm;
+    align-self: stretch;
+    margin-bottom: 0;
+  }
+  .inputError {
+    border-radius: $border-radius-base;
+    border: $border-width solid $color-error-border;
+    background: $color-error-bg;
+  }
+
+  .inputValid {
+    border-radius: $border-radius-base;
+    border: $border-width solid $color-success-border;
+    background: $color-success-bg;
+  }
+
+  .fullRow {
+    grid-column: span 2;
+  }
+}
+
+.helperText {
+  display: flex;
+  padding: $spacing-xs;
+  justify-content: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  border-radius: $border-radius-base;
+  background: $color-fresh-green-50;
+
+  color: $color-content-secondary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}
+.checkboxGroup {
+  display: flex;
+  padding: $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  align-self: stretch;
+
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+}
+.confirmWrapper {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+  font-size: $font-size-sm !important;
+  border-radius: $border-radius-lg;
+  background: $color-fresh-green-50;
+}
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+  align-self: stretch;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border: $border-width solid $color-primary; // optional border, can set to transparent if fully invisible
+  border-radius: $border-radius-base;
+  // margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.2s ease;
+
+  &::after {
+    content: '';
+    width: 6px;
+    height: 9px;
+    display: block;
+    border-right: $border-width solid $color-primary;
+    border-bottom: $border-width solid $color-primary;
+    transform: rotate(44deg);
+    opacity: 0;
+  }
+}
+
+.checkboxInput:checked + .customCheckbox::after {
+  opacity: 1;
+  margin-bottom: $spacing-xxxs-small;
+}
+
+.required {
+  color: $color-error;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  margin-left: $spacing-xxxs-small;
+}
+
+.error {
+  color: red;
+  font-size: $font-size-xs;
+  margin-top: $spacing-xxxs;
+}
+
+.subStep {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  border: $border-width-thin solid $color-gray-border-light;
+  background: $color-platinum-50;
+}
+.tempDataCard {
+  width: 100%;
+  display: flex;
+  padding: $spacing-xs;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  align-self: stretch;
+
+  h4 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+  p {
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+}
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+
+  label {
+    margin: 0;
+  }
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $spacing-lg;
+  row-gap: 28px;
+  width: 100%;
+  padding: $spacing-md;
+  align-items: start;
+  align-self: stretch;
+}
+
+.formGrid .formGroup {
+  width: 100%;
+  min-width: 0;
+}
+
+.formGroup {
+  width: 48.5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  label {
+    color: $color-black;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm; /* 142.857% */
+  }
+  .inputWrapper {
+    position: relative;
+    width: 100%;
+
+    .inputSuffix {
+      position: absolute;
+      right: $spacing-md;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-content-tertiary;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-base; /* 200% */
+      pointer-events: none;
+    }
+  }
+
+  // .dropdown :global(.labelText) {
+  //   font-weight: 600;
+  //   color: #111827;
+  // }
+  /* Apply placeholder style from DropdownComponent */
+
+  /* Placeholder ("Select") */
+  // .dropdown :global(.notSelected) :global(.labelText) {
+  //   font-weight: 500;
+  //   color: #9ca3af;
+  // }
+  .required {
+    color: $color-error;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm;
+  }
+  input,
+  select {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base; /* 171.429% */
+    border-radius: $border-radius-base;
+    background: $color-gray-light;
+    border-radius: $border-radius-md;
+    outline: none;
+    border: none;
+    resize: none;
+    width: 100%;
+    display: flex;
+    padding: $spacing-md 22px $spacing-md $spacing-lg;
+    align-items: center;
+    gap: 350px;
+    align-self: stretch;
+  }
+
+  input {
+    padding-right: 120px;
+  }
+  .disabledGroup {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .label {
+    color: $color-content-disabled;
+  }
+
+  .disabledInput {
+    color: $color-content-disabled;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base; /* 171.429% */
+    border-radius: $border-radius-base;
+    background: $color-gray-light;
+    cursor: not-allowed !important;
+  }
+  .error {
+    color: $color-error;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-sm;
+    align-self: stretch;
+    margin-bottom: 0;
+  }
+  .inputError {
+    border-radius: $border-radius-base;
+    border: $border-width solid $color-error-border;
+    background: $color-error-bg;
+  }
+
+  .inputValid {
+    border-radius: $border-radius-base;
+    border: $border-width solid $color-success-border;
+    background: $color-success-bg;
+  }
+
+  .fullRow {
+    grid-column: span 2;
+  }
+}
+.tooltipWrap {
+  position: relative;
+  width: 100%;
+}
+.dropdown :global(.dropdownToggle) :global(.placeholder) {
+  font-weight: $font-weight-medium !important;
+}
+.dropdownWrapper {
+  position: relative;
+  width: 100%;
+
+  .dropdown {
+    font-weight: $font-weight-medium !important;
+  }
+  .dropdownToggle .labelText {
+    font-weight: $font-weight-medium !important;
+  }
+}
+.dropdownToggle .labelText {
+  font-weight: $font-weight-medium !important;
+}
+.labelColor {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base; /* 171.429% */
+}
+
+.infoIcon {
+  position: absolute;
+  margin-left: 168px;
+  top: -1px;
+}
+.disabledIcon {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.confirmWrapper {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+  font-size: $font-size-sm !important;
+  border-radius: $border-radius-lg;
+  background: $color-fresh-green-50;
+
+  p {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm !important;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}
+.offsettingCarbonImpactWrapper {
+  display: flex;
+  padding: $spacing-xs $spacing-lg;
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  background: $color-platinum-100;
+  flex-direction: column;
+}
+.offsetCarbonWrapper {
+  display: flex;
+
+  align-items: flex-start;
+  gap: $spacing-md;
+}
+.offsetWrap {
+  display: flex;
+
+  align-items: flex-start;
+  flex-direction: column;
+
+  h3 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+  p {
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+}
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+  align-self: stretch;
+}
+.multiselectWrap {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  gap: $spacing-xs;
+  user-select: none;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  p {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}
+
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  z-index: 5;
+}
+
+.customCheckbox,
+.Checkbox {
+  width: 20px;
+  height: 20px;
+  border: $border-width solid $color-primary;
+  border-radius: $border-radius-base;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.2s ease;
+
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 8px;
+    display: block;
+    border-right: $border-width solid $color-primary;
+    border-bottom: $border-width solid $color-primary;
+    transform: rotate(44deg);
+    opacity: 0;
+    margin-bottom: $spacing-xxxs-small;
+  }
+}
+.Checkbox {
+  width: 15px;
+
+  height: 15px;
+}
+
+.checkboxInput:checked + .customCheckbox::after,
+.checkboxInput:checked + .Checkbox::after {
+  opacity: 1;
+}
+
+.error {
+  color: red;
+  font-size: $font-size-xs;
+  margin-top: $spacing-xxxs;
+}
+.offsetValueWrapper {
+  display: flex;
+  padding: $spacing-md;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  background: $color-white;
+
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+.compoWrapper {
+  display: flex;
+  gap: $spacing-md;
+
+  flex-direction: column;
+  width: 100%;
+}
+.noWrapper {
+  display: none;
+}
+.requestText {
+  color: $color-content-tertiary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}

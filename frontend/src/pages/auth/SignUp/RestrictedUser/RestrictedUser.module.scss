@@ -1,0 +1,52 @@
+@use '@styles/abstracts' as *;
+
+.step {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-3xl;
+
+  .restrictedUserWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+
+    .restrictedUserTitle {
+      @include text-base($color-black);
+      text-align: center;
+      font-size: 32px;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-xl;
+      width: 100%;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      @include text-base($color-black);
+      text-align: center;
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-sm;
+      margin-bottom: 0;
+    }
+
+    a {
+      @include link-primary;
+      text-decoration: none;
+      color: #276ef1;
+    }
+  }
+
+  button {
+    @include button-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    align-self: stretch;
+  }
+}

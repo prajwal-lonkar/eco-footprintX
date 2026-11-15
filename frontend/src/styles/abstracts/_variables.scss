@@ -1,0 +1,163 @@
+// Colors
+$color-black: #000000 !default;
+$color-white: #ffffff !default;
+$color-gray: #a6a6a6 !default;
+$color-gray-light: #f6f6f6 !default;
+$color-gray-medium: #7c7c7c !default;
+$color-content-secondary: #545454 !default;
+$color-content-tertiary: #6b6b6b !default;
+$color-primary: #3f5a51 !default;
+$color-error: #e11900 !default;
+$color-error-border: #f1998e !default;
+$color-error-bg: #ffefed !default;
+$color-error-light: #ff3b3b !default;
+$color-gray-border: #d1d5db !default;
+$color-gray-border-light: #e2e2e2 !default;
+$color-gray-progress: #e5e7eb !default;
+$color-gray-step: #cbd5e1 !default;
+$color-gray-dark: #8c8c8c !default;
+$color-warning-dark: #996f00 !default;
+$color-warning-light: #ffc043 !default;
+$color-warning-bg: #fffaf0 !default;
+$color-success-dark: #048848 !default;
+$color-accent-2: #972eff !default;
+$color-accent-2-bg: #f9f4fe !default;
+$color-success: #4caf50 !default;
+$color-success-light: #c2e579 !default;
+$color-success-shadow: rgba(16, 185, 129, 0.2) !default;
+$color-success-border: #66d19e !default;
+$color-success-bg: #e6f2ed !default;
+$color-primary-hover: #2f4640 !default;
+$color-primary-active: #2d443f !default;
+$color-primary-light: rgba(63, 90, 81, 0.05) !default;
+$color-primary-light-active: rgba(63, 90, 81, 0.1) !default;
+$color-text-dark: #272727 !default;
+$color-text-darker: #333 !default;
+$color-content-primary: #141414 !default;
+$color-content-tertiary-light: #757575 !default;
+$color-content-disabled: #afafaf !default;
+$color-border-light: #d0d5dd !default;
+$color-border-tooltip: #dcdcdc !default;
+$color-bg-light: #f1f3f4 !default;
+$color-bg-secondary: #f8f8f8 !default;
+$color-bg-muted: #f5f5f5 !default;
+$color-bg-primary: #ffffff !default;
+$color-gray-role-label: #545454 !default;
+$color-dark-forest-50: #f1f4f3 !default;
+$color-dark-teal: #1c4e65 !default;
+$cool-Green-300: #87ab9f !default;
+$cool-green-600: #3f5a51 !default;
+$cool-green-100: #c3d5cf !default;
+$cool-green-50: #e1eae7 !default;
+$color-border-table: #eaecef !default;
+$color-highlight-add-new: #f6f6f6 !default;
+$color-slate-blue-700-base: #085172 !default;
+$color-platinum-100: #f2f2f2 !default;
+$color-plan-current-bg: #cddbe1 !default;
+$color-plan-light-upgrade-bg: #a8e0f9 !default;
+$color-plan-standard-upgrade-bg: #c7f4e5 !default;
+$color-plan-pro-upgrade-bg: #a8d9d4 !default;
+$color-plan-enterprise-upgrade-bg: #c8d8d3 !default;
+$color-fresh-green-50: #eafbf5 !default;
+$color-fresh-green-100: #daf8ee !default;
+$color-platinum-50: #fcfcfc !default;
+$color-skeleton: #e3e7e5 !default;
+$color-surface-muted: #e0e6e4 !default;
+// Consumer no-impact card specific
+$color-no-impact-card-border: #dbddd6 !default;
+$color-text-secondary-444: #444444 !default;
+
+$content-state-disabled: #afafaf !default;
+$background-state-disabled: #f6f6f6 !default;
+
+$font-family-base: 'General Sans', sans-serif !default;
+$Background-Info-Accent: #eff3fe !default;
+
+$font-size-xxs: 10px !default;
+$font-size-xs: 12px !default;
+$font-size-sm: 14px !default;
+$font-size-base: 16px !default;
+$font-size-lg: 20px !default;
+$font-size-xl: 48px !default;
+
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+
+$line-height-xs: 16px !default;
+$line-height-sm: 20px !default;
+$line-height-base: 24px !default;
+$line-height-xl: 115% !default;
+$line-height-xxl: 120% !default;
+
+// Spacing
+$spacing-xxs: 3px !default;
+$spacing-xxxs-small: 2.5px !default;
+$spacing-xxxs: 4px !default;
+$spacing-xxxs-medium: 6px !default;
+$spacing-xs: 8px !default;
+$spacing-sm: 10px !default;
+$spacing-md: 12px !default;
+$spacing-base: 14px !default;
+$spacing-lg: 16px !default;
+$spacing-xl: 24px !default;
+$spacing-2xl: 26px !default;
+$spacing-3xl: 32px !default;
+$spacing-4xl: 40px !default;
+$spacing-5xl: 50px !default;
+$spacing-xl-small: 20px !default;
+
+// Borders
+$border-width: 2px !default;
+$border-width-thin: 1px !default;
+$border-radius-base: 4px !default;
+$border-radius-md: 6px !default;
+$border-radius-lg: 8px !default;
+$border-radius-xl: 12px !default;
+$border-radius-xxl: 16px !default;
+$color-border-section: #e2e2e2 !default;
+
+// Dimensions
+$input-height: 48px !default;
+$input-max-width: 450px !default;
+$step-size-large: 19px !default;
+$step-size-medium: 18px !default;
+$step-size-small: 10px !default;
+$step-border-width: 5px !default;
+$progress-height: 2px !default;
+$progress-bar-height: 4px !default;
+$icon-size-small: 10px !default;
+$icon-size-regular: 14px !default;
+$icon-size-medium: 16px !default;
+$icon-size-base-small: 20px !default;
+$icon-size-base: 24px !default;
+$otp-input-size: 36px !default;
+$textarea-height: 133px !default;
+$tooltip-width: 217px !default;
+$icon-offset-right: 12px !default;
+$icon-offset-right-medium: 22px !default;
+$icon-offset-right-large: 44px !default;
+$icon-offset-right-xlarge: 68px !default;
+
+// Transitions
+$transition-duration: 0.2s !default;
+$transition-duration-slow: 0.3s !default;
+
+// Shadows
+$shadow-shallow-below: 0 4px 16px 0 rgba(0, 0, 0, 0.12) !default;
+$shadow-tooltip: 0 4px 12px rgba(0, 0, 0, 0.15) !default;
+$shadow-dropdown-menu:
+  0 43px 12px 0 rgba(186, 186, 186, 0),
+  0 27px 11px 0 rgba(186, 186, 186, 0.01),
+  0 15px 9px 0 rgba(186, 186, 186, 0.05),
+  0 7px 7px 0 rgba(186, 186, 186, 0.09),
+  0 2px 4px 0 rgba(186, 186, 186, 0.1) !default;
+
+// Opacity
+$opacity-disabled: 0.3 !default;
+$opacity-hover: 0.9 !default;
+$opacity-medium: 0.5 !default;
+$opacity-light: 0.8 !default;
+
+// Overlays
+$overlay-backdrop: rgba(0, 0, 0, 0.4) !default;

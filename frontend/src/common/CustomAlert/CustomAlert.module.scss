@@ -1,0 +1,131 @@
+@use '@styles/abstracts' as *;
+
+@use '@styles/abstracts/' as *;
+
+// Alert variants
+$success-bg: $color-success-bg;
+$success-border: $color-success-dark;
+$success-text: #007c40;
+
+.alertContainer {
+  position: fixed;
+  top: $spacing-xl-small;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  min-width: 400px;
+  max-width: 600px;
+  animation: slideDown 0.3s ease-out;
+
+  @media (max-width: 768px) {
+    min-width: 90%;
+    max-width: 90%;
+    top: $spacing-sm;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.banner {
+  border: $border-width-thin solid;
+  border-radius: $border-radius-lg;
+  width: 100%;
+}
+
+.success {
+  background-color: $success-bg;
+  border-color: $success-border;
+
+  .message,
+  .closeButton {
+    color: $success-text;
+  }
+}
+
+.danger {
+  background-color: $color-error-bg;
+  border-color: $color-error;
+
+  .message,
+  .closeButton {
+    color: $color-error;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.artworkFrame {
+  padding: $spacing-lg;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: $spacing-xl;
+  height: $spacing-xl;
+  flex-shrink: 0;
+}
+
+.textFrame {
+  flex: 1;
+  padding: $spacing-md 0;
+  min-width: 0;
+}
+
+.message {
+  @include text-base;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+  transition: opacity $transition-duration;
+
+  &:hover {
+    opacity: $opacity-hover;
+  }
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity $transition-duration;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.closeIcon {
+  width: $spacing-lg;
+  height: $spacing-lg;
+}

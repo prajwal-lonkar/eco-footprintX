@@ -1,0 +1,86 @@
+@use '@styles/abstracts' as *;
+
+.tooltipWrapper {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+
+  vertical-align: middle;
+  &:hover .tooltipBox {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.truncatedText {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.tooltipBox {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: $spacing-md;
+  align-items: flex-start;
+  flex: 1 0 0;
+  border-radius: $border-radius-lg;
+  border: $border-width-thin solid #e9e9e9;
+  background: $color-white;
+  color: $color-content-tertiary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs; /* 133.333% */
+  z-index: 9999;
+  white-space: normal;
+  word-break: break-word;
+  width: 200px;
+  margin-top: 5px;
+  font-size: $font-size-xs;
+  box-shadow: $shadow-tooltip;
+}
+.tooltipRight {
+  position: absolute;
+  top: 8%;
+  left: 22px;
+  transform: translateY(-50%);
+}
+.tooltipTop {
+  left: 128px;
+}
+.tooltipBottomRight {
+  left: -400%;
+}
+.tooltipLeft {
+  transform: translateX(-20%);
+}
+.arrow {
+  position: absolute;
+  top: -$spacing-xxxs-medium;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: $color-white;
+  border-left: $border-width-thin solid #ddd;
+  border-top: $border-width-thin solid #ddd;
+}
+.arrowRight {
+  top: 50%;
+  left: 0%;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.arrowBottomRight {
+  left: 87%;
+}
+.arrowLeft {
+  left: 20%;
+}

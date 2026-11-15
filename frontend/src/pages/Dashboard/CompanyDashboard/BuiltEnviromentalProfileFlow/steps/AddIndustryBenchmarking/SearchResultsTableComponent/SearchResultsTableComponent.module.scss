@@ -1,0 +1,234 @@
+@use '@styles/abstracts' as *;
+
+.searchResultsTableContainer {
+    display: flex;
+    width: 100%;
+    padding: 0 $spacing-lg $spacing-md $spacing-lg;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-md;
+}
+
+.searchResultsTableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.searchResultsTableHeaderTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xxxs;
+    flex: 1 0 0;
+
+    h3 {
+        color: $color-black;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-base;
+        margin: 0;
+
+        span {
+            color: $content-state-disabled;
+            font-family: $font-family-base;
+            font-size: $font-size-xs;
+            font-style: normal;
+            font-weight: $font-weight-medium;
+            line-height: $line-height-xxl;
+            margin-left: $spacing-xs;
+            margin-bottom: $spacing-xxs;
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    p {
+        color: $color-gray-dark;
+        font-family: $font-family-base;
+        font-size: $font-size-xs;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: normal;
+    }
+}
+
+.searchResultsTableBody {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    width: 100%;
+
+    >div {
+        width: 100%;
+    }
+}
+
+.checkboxIcon {
+    position: relative;
+    top: -$spacing-xxxs-small;
+}
+
+.searchResultsTableBodyContentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: $border-radius-lg;
+    border: $border-width-thin solid $color-gray-border-light;
+    overflow: visible;
+}
+
+.searchReasultstableHeader {
+    display: flex;
+    padding: $spacing-xxxs-medium $spacing-md;
+    align-items: center;
+    gap: $spacing-lg;
+    align-self: stretch;
+    width: 100%;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    border-bottom: $border-width-thin solid $color-gray-border-light;
+    background: $color-white;
+}
+
+.tableCell {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xxs;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xxl;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0;
+}
+
+.searchReasultstableHeaderTitle {
+    display: grid;
+    grid-template-columns:
+            minmax(110px, 1.5fr) minmax(90px, 1.5fr) minmax(80px, 1fr) minmax(80px, 1fr);
+    gap: $spacing-lg;
+    align-items: flex-start;
+    flex: 1 0 0;
+    width: 100%;
+
+    p {
+        color: $color-gray-dark;
+        font-family: $font-family-base;
+        font-size: $font-size-xxs;
+        font-weight: $font-weight-medium;
+        margin: 0;
+        white-space: nowrap;
+        min-width: 0;
+        text-overflow: ellipsis;
+    }
+
+    &.useTransportColGrid {
+        grid-template-columns:
+            minmax(180px, 1.5fr) minmax(180px, 1.5fr) minmax(100px, 1.2fr);
+    }
+
+}
+
+.infoIcon {
+    position: relative;
+    top: -1px;
+    margin-left: $spacing-xxxs-small;
+}
+
+.searchResultsTableBodyContentDetails {
+    display: grid;
+    grid-template-columns:
+    minmax(110px, 1.5fr) minmax(190px, 1.5fr) minmax(80px, 1fr) minmax(80px, 1fr);
+    gap: $spacing-lg;
+    align-items: flex-start;
+    flex: 1 0 0;
+    width: 100%;
+
+    p {
+        color: $color-content-primary;
+        font-family: $font-family-base;
+        font-size: $font-size-xxs;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-xxl;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+    }
+
+    &.useTransportColGrid {
+        grid-template-columns:
+            minmax(180px, 1.5fr) minmax(180px, 1.5fr) minmax(100px, 1.2fr);
+    }
+}
+
+.none {
+    display: flex;
+    width: $icon-size-base-small;
+    height: $icon-size-base-small;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchResultsTableBodyContent {
+    display: flex;
+    padding: $spacing-md $spacing-md $spacing-xs $spacing-md;
+    align-items: center;
+    gap: $spacing-lg;
+    align-self: stretch;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    background: $color-white;
+    cursor: pointer;
+    overflow: visible;
+
+    &:hover {
+        background: $color-bg-secondary;
+    }
+}
+
+.selectedCount {
+    p {
+        color: $color-content-primary;
+        font-family: $font-family-base;
+        font-size: $font-size-xs;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-xxl;
+    }
+}
+
+
+.noResultsFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xxxs;
+    width: 404.131px;
+    align-self: center;
+
+    h3 {
+        color: $color-content-primary;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: normal;
+        margin: 0;
+    }
+
+    p {
+        color: $color-gray-dark;
+        text-align: center;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: normal;
+    }
+}

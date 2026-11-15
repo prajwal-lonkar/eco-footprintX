@@ -1,0 +1,124 @@
+@use '@styles/abstracts' as *;
+
+@use '@styles/abstracts/variables' as *;
+
+.card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-3xl;
+  height: 100%;
+
+  &.cardLargeGap {
+    gap: $spacing-5xl;
+  }
+
+  h1 {
+    color: $color-black;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-xl;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-xl;
+    margin-bottom: 0;
+  }
+
+  /* Progress Bar */
+  .progressContainer {
+    width: 100%;
+  }
+
+  .progressTrack {
+    height: $progress-height;
+    background: $color-gray-progress;
+    border-radius: $border-radius-base;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+
+  .progressBar {
+    height: $progress-bar-height;
+    background: $color-primary;
+    border-radius: $border-radius-base;
+    transition: width $transition-duration-slow ease;
+  }
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -$spacing-sm;
+    position: relative;
+    align-items: center;
+  }
+
+  .step {
+    background: $color-gray-step;
+    border-radius: 50%;
+    transition: background $transition-duration-slow;
+    width: $step-size-large;
+    height: $step-size-medium;
+  }
+
+  .completedStep {
+    background: $color-primary;
+    width: $step-size-small;
+    height: $step-size-small;
+    flex-shrink: 0;
+  }
+
+  .activeStep {
+    background: $color-success-light;
+    border: $step-border-width solid $color-primary;
+  }
+
+  .inactiveStep {
+    background: $color-gray-step;
+  }
+  .formArea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  /* Form */
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: $font-size-sm;
+      margin-top: $spacing-md;
+      font-weight: $font-weight-medium;
+
+      span {
+        color: $color-error-light;
+      }
+    }
+
+    input {
+      margin-top: $spacing-xs;
+      padding: $spacing-sm;
+      border-radius: $border-radius-md;
+      border: $border-width-thin solid $color-gray-border;
+      outline: none;
+
+      &:focus {
+        border-color: $color-success;
+        box-shadow: 0 0 0 3px $color-success-shadow;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1380px) {
+  .card {
+    padding: $spacing-4xl 0 0 0;
+  }
+}

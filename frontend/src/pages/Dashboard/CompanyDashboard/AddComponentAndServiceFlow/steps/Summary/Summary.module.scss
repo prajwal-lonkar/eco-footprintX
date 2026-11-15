@@ -1,0 +1,44 @@
+@use '@styles/abstracts' as *;
+
+.roleList {
+  @include flex-column($spacing-xs);
+  width: 100%;
+}
+
+.roleItem {
+  width: 100%;
+}
+
+.roleWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $input-height;
+  padding: 0 $spacing-lg;
+  box-sizing: border-box;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-border-section;
+  background: $color-white;
+  overflow: hidden;
+}
+
+.roleInput {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+  background: transparent;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $color-gray-dark;
+    opacity: 1;
+    -webkit-text-fill-color: $color-gray-dark;
+  }
+}

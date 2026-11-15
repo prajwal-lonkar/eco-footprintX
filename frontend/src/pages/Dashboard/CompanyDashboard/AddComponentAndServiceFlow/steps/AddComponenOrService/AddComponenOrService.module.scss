@@ -1,0 +1,100 @@
+@use '@styles/abstracts' as *;
+
+
+
+/* SELECT COMPONENT CARD */
+
+.selectCard {
+  @include flex-column($spacing-3xl);
+  background: $color-white;
+  box-sizing: border-box;
+  gap: $spacing-sm !important;
+}
+
+.selected {
+  background-color: $color-gray-light;
+}
+
+.resultName {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-role-label;
+}
+
+.resultSku {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-role-label;
+}
+
+.noResults {
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  color: $color-gray-dark;
+  text-align: center;
+}
+
+.addNewFormCard {
+  @include flex-column($spacing-3xl);
+  background: $color-white;
+  box-sizing: border-box;
+}
+
+.helpText {
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-dark;
+  margin: 0;
+}
+
+.inputError {
+  @include form-input-invalid;
+  background: $color-error-bg !important;
+}
+
+.skuInputWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $input-height;
+  background: $color-gray-light;
+  overflow: hidden;
+  transition: border-color $transition-duration ease;
+
+  &:focus-within {
+    border-color: $cool-Green-300;
+  }
+
+  &.inputError {
+    border-color: $color-error;
+
+    &:focus-within {
+      border-color: $color-error;
+    }
+  }
+}
+
+.skuInput {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: $spacing-xxxs $spacing-lg;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+  background: transparent;
+
+  &::placeholder {
+    color: $color-gray-medium;
+  }
+}

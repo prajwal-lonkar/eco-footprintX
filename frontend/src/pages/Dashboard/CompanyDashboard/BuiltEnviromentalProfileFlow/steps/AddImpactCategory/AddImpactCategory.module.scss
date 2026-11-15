@@ -1,0 +1,355 @@
+@use '@styles/abstracts' as *;
+
+.content {
+  @include flex-column($spacing-xl);
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $spacing-xl;
+}
+.mainTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  align-self: stretch;
+  h3 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-lg;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base; /* $line-height-xxl */
+    margin: 0;
+  }
+
+  p {
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+
+    margin: 0;
+  }
+}
+.impactCategoryWrapper {
+  position: relative;
+  display: flex;
+  padding: $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  background: $color-white;
+}
+.accordion {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  background: $color-gray-light;
+
+  width: 100%;
+  :global(.accordion-button:focus) {
+    box-shadow: none !important;
+    outline: none;
+  }
+  :global(.accordion-button) {
+    box-shadow: none !important;
+    border: none;
+    background: $color-gray-light;
+    padding: $spacing-lg;
+    transition:
+      background 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  :global(.accordion-button:not(.collapsed)) {
+    padding-bottom: 12px;
+  }
+}
+
+:global(.accordion-button::after) {
+  display: none;
+}
+
+.accordionItem {
+  border: none;
+  width: 100%;
+  background: $color-gray-light;
+}
+
+.accordionHeader {
+  display: flex;
+  border-radius: $border-radius-xl;
+
+  align-items: flex-start;
+
+  align-self: stretch;
+  &::after {
+    color: $color-content-tertiary;
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+    width: 100%;
+  }
+}
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  font-size: $font-size-base;
+  color: $color-content-tertiary;
+}
+
+.accordianBody {
+  padding: 0 $spacing-lg $spacing-lg $spacing-lg;
+}
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: $spacing-md;
+  width: 100%;
+
+  padding: $spacing-lg;
+
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  background: $color-white;
+
+  .detailsWrap {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xxxs;
+  }
+  label {
+    display: flex;
+    gap: $spacing-xs;
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+
+  p {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}
+
+.sourceWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-xl;
+
+  width: 100%;
+}
+.source {
+  display: flex;
+
+
+  @media (max-width: 1280px) {
+  
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  label {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-xs;
+   
+     width: 350px;
+     @media (max-width: 1280px) {
+    width: 100%;
+    min-width: 0;
+  }
+
+  }
+  input {
+    margin-top: $spacing-xxs;
+  }
+  .radioLabel {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-xs;
+    cursor: pointer;
+  }
+
+  /* hide native radio */
+  .radioLabel input[type='radio'] {
+    display: none;
+  }
+
+  /* outer circle */
+  .customRadio {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: $border-width solid $color-primary;
+    margin-top: $spacing-xxxs;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  /* checked state */
+  .radioLabel input[type='radio']:checked + .customRadio {
+    border-color: $color-primary;
+  }
+
+  /* inner green dot */
+  .radioLabel input[type='radio']:checked + .customRadio::after {
+    content: '';
+    width: 5.833px;
+    height: 5.833px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .sourceContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: $spacing-xxxs-small;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  h2 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+
+  p {
+    color: $color-content-tertiary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  width: 100%;
+  align-items: center;
+}
+
+.primaryButton,
+.secondaryButton,
+.tertiaryButton {
+  display: flex;
+  padding: $spacing-sm $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  width: 142px;
+  height: 36px;
+  border-radius: $border-radius-base;
+  color: $color-white;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-duration ease;
+}
+
+.secondaryButton {
+  border: $border-width-thin solid $cool-green-600;
+  background: transparent;
+  color: $cool-green-600;
+
+  &:hover {
+    background: $color-primary-light;
+  }
+}
+
+.tertiaryButton {
+  border: $border-width-thin solid $cool-green-600;
+  background: $background-state-disabled;
+  color: $cool-green-600;
+  cursor: pointer;
+  transition: all $transition-duration ease;
+
+  &:disabled {
+    border: $border-width-thin solid $cool-green-100;
+    background: $background-state-disabled;
+    color: $content-state-disabled;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: $opacity-hover;
+  }
+
+  &:not(:disabled) {
+    color: $cool-green-600;
+  }
+}
+
+.primaryButton {
+  border: none;
+  transition: all $transition-duration ease;
+
+  &:disabled {
+    background: $cool-green-100;
+    border: none;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  &:not(:disabled) {
+    background: $cool-green-600;
+    color: $color-white;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-primary-hover;
+    }
+  }
+}

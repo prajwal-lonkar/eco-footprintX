@@ -1,0 +1,79 @@
+image: node:20
+options:
+  size: 2x
+
+definitions:
+  steps:
+    - step: &build
+        name: "Build and Test"
+        image: node:20
+        caches:
+          - node
+        oidc: true
+        script:
+          - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip -q awscliv2.zip && ./aws/install
+          - export AWS_REGION=$AWS_DEFAULT_REGION
+          - export AWS_ROLE_ARN=$AWS_OIDC_ROLE_ARN
+          - export AWS_WEB_IDENTITY_TOKEN_FILE=$(pwd)/web-identity-token
+          - echo $BITBUCKET_STEP_OIDC_TOKEN > $AWS_WEB_IDENTITY_TOKEN_FILE
+          - aws secretsmanager get-secret-value --region $AWS_DEFAULT_REGION --secret-id "$SECRET_NAME" --query 'SecretString' --output text > .env
+          - npm install --force
+          - npm run build
+        artifacts:
+          - dist/**
+
+    - step: &deploy
+        name: "Deploy"
+        oidc: true
+        script:
+          - pipe: atlassian/aws-s3-deploy:1.4.0
+            variables:
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              AWS_OIDC_ROLE_ARN: $AWS_OIDC_ROLE_ARN
+              S3_BUCKET: $S3_BUCKET
+              LOCAL_PATH: 'dist'
+          - pipe: atlassian/aws-cloudfront-invalidate:0.9.0
+            variables:
+              AWS_OIDC_ROLE_ARN: $AWS_OIDC_ROLE_ARN
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              DISTRIBUTION_ID: $DISTRIBUTION_ID
+              PATHS: /*
+
+pipelines:
+  branches:
+    development:
+      - step:
+          <<: *build
+          name: "Development Build and Test"
+          deployment: DevBuild
+      - step:
+          <<: *deploy
+          name: "Deployment to Development Server"
+          deployment: DevDeploy
+    testing:
+      - step:
+          <<: *build
+          name: "Testing Build and Test"
+          deployment: TestBuild
+      - step:
+          <<: *deploy
+          name: "Deployment to Testing Server"
+          deployment: TestDeploy
+    staging:
+      - step:
+          <<: *build
+          name: "Staging Build and Test"
+          deployment: StageBuild
+      - step:
+          <<: *deploy
+          name: "Deployment to Staging Server"
+          deployment: StageDeploy
+    production:
+      - step:
+          <<: *build
+          name: "Production Build and Test"
+          deployment: ProdBuild
+      - step:
+          <<: *deploy
+          name: "Deployment to Production Server"
+          deployment: ProdDeploy

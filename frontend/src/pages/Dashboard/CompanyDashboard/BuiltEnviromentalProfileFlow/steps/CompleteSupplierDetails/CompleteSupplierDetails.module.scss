@@ -1,0 +1,379 @@
+@use '@styles/abstracts' as *;
+
+.storageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+  width: 100%;
+}
+
+.nestedFormCard {
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  align-self: stretch;
+}
+
+.nestedFormCardContent {
+  display: flex;
+  padding: 0 $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  align-self: stretch;
+  margin-bottom: $spacing-lg;
+}
+
+.netUnitWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.netWeightInput {
+  // border-right: none;
+  // border-top-right-radius: 0;
+  // border-bottom-right-radius: 0;
+  // padding-right: 110px;
+  padding-right:130px;
+}
+
+.customDropdown {
+  display: flex;
+  width: 98px;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $spacing-md;
+  border-radius: 2px;
+  background: $color-white;
+  cursor: pointer; 
+  position: absolute;
+  right: $spacing-xxxs;
+  top: 50%;
+  transform: translateY(-50%);
+  border: $border-width solid transparent;
+
+  span {
+    color: $color-gray-dark;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base;
+  }
+}
+
+
+.customUnitInput {
+  border: none;
+  outline: none;
+  background: $color-white;
+  padding: 0;
+  color: $color-text-darker;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  width: 37px;
+
+  &::placeholder {
+    color: #e8e8e8;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base;
+  }
+}
+
+.netUnitWrapper:focus-within .customDropdown {
+  border-radius: $border-radius-base;
+  border: $border-width solid $cool-Green-300;
+  background: $background-state-disabled;
+
+  .customUnitInput {
+    background: $background-state-disabled;
+  }
+}
+.dropdownIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-gray-dark;
+  flex-shrink: 0;
+  margin-left: auto;
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+}
+
+.inputError {
+  @include form-input-invalid;
+  background: $color-error-bg !important;
+  border-color: $color-error-border !important;
+  &:focus-within {
+    border-color: $color-error-border !important;
+  }
+}
+
+.inputErrorUnit {
+  background: $color-error-bg;
+  border-color: $color-error-border !important;
+}
+
+.error {
+  @include error-text;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+  width: 135px;
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 192px;
+  align-self: stretch;
+  z-index: 1000;
+  padding-left: 0;
+  border-radius: $border-radius-base;
+  border: $border-width-thin solid $color-gray-border-light;
+  background: $color-white;
+  box-shadow: $shadow-dropdown-menu;
+}
+
+.dropdownScrollbar {
+  width: 98%;
+  overflow-y: auto;
+  max-height: 192px;
+  margin-right: $spacing-xxxs;
+  scrollbar-color: initial !important;
+}
+
+.dropdownScrollbar::-webkit-scrollbar {
+  width: $spacing-xxxs !important;
+  cursor: pointer !important;
+}
+
+.dropdownScrollbar::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.dropdownScrollbar::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: $border-radius-base !important;
+  margin-right: $spacing-xxxs !important;
+  background: $content-state-disabled !important;
+  scrollbar-color: initial !important;
+}
+
+
+
+.dropdownScrollbar::-webkit-scrollbar-thumb:hover {
+  border-radius: $spacing-sm !important;
+  background: $color-gray-medium !important;
+  cursor: pointer !important;
+}
+
+.dropdownItem {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: center;
+  gap: $spacing-sm;
+  cursor: pointer;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  width: 100%;
+  border-radius: $border-radius-base $border-radius-base 0 0;
+  border-bottom: $border-width-thin solid $color-gray-border-light;
+
+  &:hover {
+    background: $cool-green-50;
+  }
+}
+
+// Search result text styles (not in parent)
+.resultName {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-role-label;
+}
+
+.resultSku {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-role-label;
+}
+
+.noResults {
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  color: $color-gray-dark;
+  text-align: center;
+}
+
+// Search dropdown field styles (matching AddSupplierDetails pattern)
+.searchWrapper {
+  @include flex-column($spacing-xs);
+  position: relative;
+  width: 100%;
+}
+
+.searchInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $input-height;
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-gray-light;
+  background: $color-gray-light;
+  overflow: hidden;
+  transition: border-color $transition-duration ease;
+
+  &:focus-within {
+    border-color: $cool-Green-300;
+  }
+
+  &.inputError {
+    border-color: $color-error-border;
+    background: $color-error-bg;
+  }
+}
+
+.searchIconWrapper {
+  display: flex;
+  align-items: center;
+  margin-inline: 12px;
+  justify-content: center;
+  width: $icon-size-base;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.searchIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+}
+
+.searchInput {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: $spacing-xxxs 0;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+  background: transparent;
+
+  &::placeholder {
+    color: $color-gray-medium;
+  }
+
+  &:disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  background: $color-white;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  border: $border-width solid $color-gray-light;
+  border-top: none;
+  max-height: 192px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.searchResultItem {
+  display: flex;
+  padding: $spacing-md $spacing-lg;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  width: 100%;
+  min-height: $input-height;
+  height: auto;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: $color-bg-light;
+  }
+
+  &.selected {
+    background-color: $color-gray-light;
+  }
+}
+
+.inputWithUnit {
+  position: relative;
+}
+
+.unitSuffix {
+  position: absolute;
+  right: $spacing-md;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: $font-size-sm;
+  pointer-events: none;
+}
+
+.inputWithUnit input {
+  padding-right: 36px;
+}
+
+.roleHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $spacing-lg $spacing-xs $spacing-lg $spacing-lg;
+  gap: $spacing-xs;
+  align-self: stretch;
+  border-bottom: $border-width-thin solid $color-gray-border-light;
+}
+
+.roleLabel {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-sm;
+  color: $color-black;
+  margin: 0;
+}

@@ -1,0 +1,226 @@
+@use '@styles/abstracts' as *;
+
+@use '@styles/abstracts/variables' as *;
+
+.formWrapper {
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.otpContainer {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  align-items: center;
+}
+
+.otpLabel {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  color: $color-primary;
+}
+
+.otpInputs {
+  display: flex;
+  gap: $spacing-md;
+  align-items: center;
+}
+
+.otpInput {
+  padding: 0;
+  width: $otp-input-size;
+  height: $otp-input-size;
+  background: $color-gray-light;
+  border: $border-width solid transparent;
+  border-radius: $border-radius-base;
+  text-align: center;
+  font-family: 'Uber Move Mono', monospace;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-sm;
+  color: $color-primary;
+  outline: none;
+  transition: all $transition-duration ease;
+
+  &:focus {
+    border: $border-width solid $color-success-border;
+    background: $color-success-bg;
+  }
+
+  &.isInvalid {
+    border: $border-width solid $color-error-border;
+    background: $color-error-bg;
+
+    &:focus {
+      border: $border-width solid $color-error-border;
+      background: $color-error-bg;
+    }
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.otpFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.timer {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  color: $color-gray-medium;
+}
+
+.resendBtn {
+  background: none;
+  border: none;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  color: $color-primary;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity $transition-duration ease;
+
+  &:hover:not(.disabled) {
+    opacity: $opacity-light;
+  }
+
+  &.disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-top: $spacing-5xl;
+}
+
+.checkboxSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.checkboxWrapper {
+  display: flex;
+  gap: $spacing-xs;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkboxInput {
+  display: none;
+}
+
+.checkboxLabel {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  color: $color-primary;
+}
+
+.link {
+  text-decoration: underline;
+  font-weight: $font-weight-semibold;
+  color: inherit;
+  cursor: pointer;
+}
+
+.required {
+  color: $color-error;
+}
+
+.buttonRow {
+  display: flex;
+  gap: $spacing-md;
+  width: 100%;
+  margin-top: $spacing-xl;
+}
+
+.loginText {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  color: $color-gray-medium;
+  text-align: center;
+}
+
+.loginLink {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.prevBtn,
+.nextBtn {
+  flex: 1;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-duration-slow ease;
+}
+
+.prevBtn {
+  background: transparent;
+  border: $border-width-thin solid $color-primary;
+  color: $color-primary;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-light;
+  }
+
+  &:disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+.nextBtn {
+  background: $color-primary;
+  border: none;
+  color: $color-white;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-hover;
+  }
+
+  &:disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-xs;
+  color: $color-error;
+  margin-top: $spacing-xs;
+  text-align: center;
+}

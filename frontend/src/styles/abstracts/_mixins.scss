@@ -1,0 +1,513 @@
+// Layout Mixins
+@use 'variables' as *;
+
+@mixin flex-column($gap: $spacing-xl) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  width: 100%;
+}
+
+// Icon Mixins
+@mixin icon-interactive($right: $spacing-lg) {
+  position: absolute;
+  right: $right;
+  color: $color-gray-dark;
+  font-size: $font-size-lg;
+  cursor: pointer;
+  transition: color $transition-duration;
+
+  &:hover {
+    color: $color-black;
+  }
+}
+
+@mixin icon-check {
+  position: absolute;
+  right: $spacing-lg;
+  color: $color-primary;
+  font-size: $font-size-base;
+  pointer-events: none;
+}
+
+// Form Mixins
+@mixin form-input-base {
+  width: 100%;
+  height: $input-height !important;
+  padding: 0 $spacing-lg !important;
+  background: $color-gray-light !important;
+  border: $border-width solid transparent !important;
+  border-radius: $border-radius-base !important;
+  font-family: $font-family-base !important;
+  font-weight: $font-weight-medium !important;
+  font-size: $font-size-sm !important;
+  line-height: $line-height-base !important;
+  color: $color-black !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  &::placeholder {
+    color: $color-gray-dark !important;
+  }
+
+  &:focus {
+    border-radius: $border-radius-base !important;
+    border: $border-width solid $color-success-border !important;
+    background: $color-success-bg !important;
+    box-shadow: none !important;
+  }
+}
+
+@mixin form-input-invalid {
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-error-border !important;
+  background: $color-error-bg !important;
+
+  &:focus {
+    border-radius: $border-radius-base;
+    border: $border-width solid $color-error-border !important;
+    background: $color-error-bg !important;
+    box-shadow: none !important;
+  }
+}
+
+@mixin form-label {
+  font-family: $font-family-base !important;
+  font-weight: $font-weight-medium !important;
+  font-size: $font-size-base !important;
+  line-height: $line-height-sm !important;
+  color: $color-black !important;
+  margin-bottom: 0 !important;
+}
+
+// Link Mixins
+@mixin link-primary {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Button Mixins
+@mixin button-primary {
+  width: 100% !important;
+  padding: $spacing-sm $spacing-md !important;
+  background: $color-primary !important;
+  border: none !important;
+  border-radius: $border-radius-base !important;
+  font-family: $font-family-base !important;
+  font-weight: $font-weight-medium !important;
+  font-size: $font-size-sm !important;
+  line-height: $line-height-xs !important;
+  color: $color-white !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: opacity $transition-duration !important;
+  box-shadow: none !important;
+
+  &:hover:not(:disabled) {
+    opacity: $opacity-hover !important;
+    background: $color-primary !important;
+  }
+
+  &:active,
+  &:focus {
+    background: $color-primary !important;
+    box-shadow: none !important;
+  }
+
+  &:disabled {
+    opacity: $opacity-disabled !important;
+    cursor: not-allowed !important;
+    background: $color-primary !important;
+  }
+}
+
+@mixin button-workflow-primary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-base;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-duration ease;
+  background: $color-primary;
+  border: $border-width-thin solid $color-primary;
+  color: $color-white;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+
+  &:active {
+    background: $color-primary-active;
+  }
+
+  &:disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-workflow-secondary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-base;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xs;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-duration ease;
+  background: transparent;
+  border: $border-width-thin solid $color-primary;
+  color: $color-primary;
+
+  &:hover {
+    background: $color-primary-light;
+  }
+
+  &:active {
+    background: $color-primary-light-active;
+  }
+
+  &:disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+// Typography Mixins
+@mixin text-base($color: $color-black) {
+  font-family: $font-family-base;
+  color: $color;
+  margin: 0;
+}
+
+@mixin error-text {
+  color: $color-error;
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-sm;
+}
+
+// Products Table Common Styles
+@mixin products-table-common-styles {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: $spacing-xl $spacing-xl 0 $spacing-xl;
+  }
+
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-lg;
+
+    h2 {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+    }
+
+    p {
+      color: $color-gray-dark;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+    }
+  }
+
+  .headerContent {
+    display: flex;
+    max-width: 780px;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  .addProductBtn {
+    display: inline-flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-xs;
+    border-radius: $border-radius-md;
+    border: $border-width-thin solid $color-primary;
+    background: $color-primary;
+    color: $color-white;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+    cursor: pointer;
+  }
+
+  .cardTable {
+    background: $color-white;
+    border: $border-width-thin solid $color-border-light;
+    border-radius: $spacing-sm;
+    // overflow: hidden;
+    width: 100%;
+    margin-top: $spacing-lg;
+  }
+
+  .tableHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-2xl;
+    border-bottom: $border-width-thin solid $color-border-table;
+    background: $color-dark-forest-50;
+  }
+
+  .tableBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .tableRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $spacing-2xl;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      background: $color-gray-light;
+    }
+  }
+
+  .cell {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: $spacing-base 0;
+    min-width: 0;
+  }
+
+}
+
+@mixin comparePendingSubmissionStyles {
+  .compareWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+  }
+
+  .compareSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    height: 100%;
+    padding: $spacing-lg;
+    border-radius: $border-radius-xl;
+    border: $border-width-thin solid $color-border-section;
+    background: $color-white;
+  }
+
+  .compareSectionHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-xs;
+
+    h2 {
+      margin: 0;
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+    }
+  }
+
+  .compareCardsWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $spacing-lg;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+  }
+
+  .compareCardSlot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  // !important is required here to override shared ImpactCategoryCard sizing rules
+  // so compare cards can stretch to full slot width and keep equal-height alignment.
+  .compareCardSlot > :first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .compareCardSlot > :first-child > :first-child {
+    flex: 0 0 auto !important;
+  }
+
+  .compareCardSlot > :first-child > :nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .compareCardsAllNoData .compareCardSlot {
+    height: 198px;
+    min-height: 198px;
+  }
+
+  .compareCardsAllNoData .compareCardSlot > :first-child {
+    height: 198px !important;
+    min-height: 198px !important;
+  }
+
+  .pendingCardWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  .approvalCheckbox {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xxxs;
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    cursor: pointer;
+
+    input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      margin: 0;
+      border: $border-width solid $cool-green-600;
+      border-radius: 3px;
+      background: $color-white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    input:checked {
+      border-color: $cool-green-600;
+    }
+
+    input:checked::after {
+      content: '';
+      width: $spacing-xs;
+      height: 4px;
+      border-left: $border-width solid $cool-green-600;
+      border-bottom: $border-width solid $cool-green-600;
+      transform: rotate(-45deg) translate(-0.2px, 0px);
+    }
+
+    span {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      letter-spacing: 0.28px;
+    }
+  }
+
+  .keepOriginalButton,
+  .submitNewResultsButton {
+    width: 100%;
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    cursor: pointer;
+    border-radius: $border-radius-base;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+  }
+
+  .keepOriginalButton {
+    border: $border-width-thin solid $color-border-section;
+    background: $color-white;
+    color: $color-gray-role-label;
+    margin-top: auto;
+  }
+
+  .submitNewResultsButton {
+    border: $border-width-thin solid $cool-green-600;
+    background: $cool-green-600;
+    color: $color-white;
+    margin-top: auto;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .compareCardsWrapper {
+      align-items: stretch;
+    }
+
+    .compareCardSlot > :first-child {
+      height: 100%;
+    }
+  }
+}

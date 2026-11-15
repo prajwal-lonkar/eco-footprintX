@@ -1,0 +1,458 @@
+@use '@styles/abstracts' as *;
+
+.formCard {
+  @include flex-column($spacing-3xl);
+  background: $color-white;
+  display: flex;
+  margin-top: $spacing-xl;
+  align-items: flex-start;
+  border-radius: $border-radius-base;
+  border: $border-width-thin solid $color-gray-border-light;
+  padding: $spacing-lg;
+  gap: $spacing-lg;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.nestedFormCard {
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  width: 100%;
+  display: flex;
+  padding-bottom: $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  align-self: stretch;
+}
+.nestedFormCardContent{
+  display: flex;
+  padding: 0 $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  align-self: stretch;  
+}
+
+.roleHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $spacing-lg $spacing-xs $spacing-lg $spacing-lg;
+  gap: $spacing-xs;
+  align-self: stretch;
+  border-bottom: $border-width-thin solid $color-gray-border-light;
+}
+
+.roleLabel {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-sm;
+  color: $color-black;
+  margin: 0;
+}
+
+.roleLabelDescription {
+  margin: 0;
+  padding: $spacing-xxxs;
+  border-radius: $border-radius-base;
+  background: $Background-Info-Accent;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-sm;
+  color: $color-black;
+  font-style: normal;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $input-height;
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-gray-light;
+  background: $color-gray-light;
+  overflow: visible;
+  transition: border-color $transition-duration ease;
+
+  &:focus-within {
+    border-color: $cool-Green-300;
+  }
+}
+
+.formSelect {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: $spacing-md $spacing-lg;
+  padding-right: $input-height;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.selectValue {
+  color: $color-black;
+}
+
+.selectPlaceholder {
+  color: $color-gray-medium;
+}
+
+.selectArrowWrapper {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $input-height;
+  height: 100%;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  overflow-y: auto;
+  background: $color-white;
+  border: $border-width solid $color-gray-light;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
+
+.dropdownOption {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: $color-gray-light;
+  }
+
+  &:first-child {
+    border-radius: $border-radius-base $border-radius-base 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $border-radius-base $border-radius-base;
+  }
+}
+
+.inputError {
+  @include form-input-invalid;
+  background: $color-error-bg !important;
+  border-color: $color-error-border !important;
+  
+  &:focus-within {
+    border-color: $color-error-border !important;
+  }
+}
+
+.error {
+  @include error-text;
+}
+
+// Search dropdown field styles
+.searchWrapper {
+  @include flex-column($spacing-xs);
+  position: relative;
+  width: 100%;
+}
+
+.searchInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $input-height;
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-gray-light;
+  background: $color-gray-light;
+  overflow: hidden;
+  transition: border-color $transition-duration ease;
+
+  &:focus-within {
+    border-color: $cool-Green-300;
+  }
+}
+
+.searchIconWrapper {
+  display: flex;
+  align-items: center;
+  margin-inline: 12px;
+  justify-content: center;
+  width: $icon-size-base;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.searchIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+}
+
+.searchInput {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: $spacing-xxxs 0;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+  background: transparent;
+
+  &::placeholder {
+    color: $color-gray-medium;
+  }
+
+  &:disabled {
+    opacity: $opacity-medium;
+    cursor: not-allowed;
+  }
+}
+
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  background: $color-white;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  max-height: 192px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.searchResultItem {
+  display: flex;
+  padding: $spacing-md $spacing-lg;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  width: 100%;
+  min-height: $input-height;
+  height: auto;
+  min-height: $input-height;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: $color-bg-light;
+  }
+
+  &.selected {
+    background-color: $color-gray-light;
+  }
+}
+
+.resultName {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-role-label;
+}
+
+.resultSku {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-role-label;
+}
+
+.noResults {
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  color: $color-gray-dark;
+  text-align: center;
+}
+
+// Manufacturing Activity Dropdown styles (matching SelectSupplierWithRole pattern)
+.roleDropdownWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: $input-height;
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-gray-light;
+  background: $color-gray-light;
+  cursor: pointer;
+  transition: border-color $transition-duration ease;
+  box-sizing: border-box;
+
+  &:focus-within {
+    border-color: $cool-Green-300;
+  }
+}
+
+.roleDropdownInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $spacing-xxxs $spacing-lg;
+  min-height: $input-height;
+  box-sizing: border-box;
+}
+
+.rolePlaceholder {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-medium;
+}
+
+.roleSelectedText {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+}
+
+.roleDropdownIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  flex-shrink: 0;
+}
+
+.roleDropdownList {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  width: 100%;
+  background: $color-white;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  border: $border-width-thin solid $color-gray-border;
+  border-top: none;
+  max-height: fit-content;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.roleDropdownListUp {
+  top: auto;
+  bottom: calc(100% + 1px);
+  border-radius: $border-radius-base $border-radius-base 0 0;
+  border-top: $border-width-thin solid $color-gray-border;
+  border-bottom: none;
+}
+
+.roleOption {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-xxxs $spacing-lg;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: $color-bg-light;
+  }
+}
+
+.roleCheckbox {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  flex-shrink: 0;
+}
+
+.roleOptionText {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+}
+
+.selectedRolesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+  width: 100%;
+}
+
+.roleChip {
+  display: flex;
+  padding: $spacing-xs $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-lg;
+  border-radius: 100px;
+  background: $cool-green-50;
+  box-sizing: border-box;
+}
+
+.roleChipText {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+}
+
+.roleChipClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  flex-shrink: 0;
+}
+
+.roleChipCloseIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+}

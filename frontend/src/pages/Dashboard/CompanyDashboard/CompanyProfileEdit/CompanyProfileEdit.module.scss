@@ -1,0 +1,367 @@
+@use '@styles/abstracts' as *;
+
+@use '@styles/abstracts/variables' as *;
+.headerWrapper {
+  display: flex;
+
+  padding: $spacing-lg $spacing-xl;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $spacing-xs;
+  border-bottom: $border-width-thin solid $color-gray-border-light;
+}
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  align-self: stretch;
+  color: $color-content-secondary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  cursor: pointer;
+  .backBtn {
+    margin: 0;
+    border: none;
+    background: transparent;
+    .backIcon {
+      display: flex;
+      width: 14px;
+      height: 14px;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1/1;
+      color: $color-content-secondary;
+    }
+  }
+}
+.wrapper {
+  background: $color-white;
+
+  border-radius: 10px;
+  padding: $spacing-3xl $spacing-xl $spacing-3xl $spacing-xl;
+  width: 100%;
+  box-sizing: border-box;
+
+  .contentWrapper {
+    display: flex;
+
+    padding: $spacing-xl;
+    flex-direction: column;
+
+    gap: $spacing-4xl;
+    border-radius: $border-radius-xxl;
+    border: $border-width-thin solid $color-gray-border-light;
+  }
+  .contentInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xl;
+    align-self: stretch;
+    width: 100%;
+  }
+  .headerRow {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    align-self: stretch;
+    .profileImg {
+      display: flex;
+      width: 60px;
+      height: 60px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 93.75px;
+    }
+    .companyInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .companyNameWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-xs;
+
+      .companyName {
+        color: $color-content-primary;
+        font-family: $font-family-base;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: normal;
+        margin: 0;
+        overflow-wrap: anywhere;
+        max-width: 478px;
+        display: block;
+      }
+      p {
+        display: flex;
+        gap: $spacing-xxxs;
+        align-items: center;
+        color: #596e67;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: normal;
+        margin: 0;
+      }
+    }
+  }
+  .backBtn {
+    font-size: $font-size-sm;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: $spacing-base;
+    color: #374151;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-xl;
+  }
+
+  /* FORM GRID */
+  .formGrid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-xl;
+    width: 100%;
+  }
+
+  .formGroup {
+    width: 48.5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xs;
+    label {
+      color: $color-black;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-sm; /* 125% */
+    }
+
+    .required {
+      color: $color-error;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-sm;
+    }
+    input,
+    select {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-base; /* 171.429% */
+      border-radius: $border-radius-base;
+      background: $color-gray-light;
+      border-radius: $border-radius-md;
+      outline: none;
+      border: none;
+      resize: none;
+
+      display: flex;
+      padding: $spacing-md 22px $spacing-md $spacing-lg;
+      align-items: center;
+      gap: 350px;
+      align-self: stretch;
+    }
+
+    .disabledGroup {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .label {
+      color: $color-content-disabled;
+    }
+
+    .disabledInput {
+      color: $color-content-disabled;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-base; /* 171.429% */
+      border-radius: $border-radius-base;
+      background: $color-gray-light;
+      cursor: not-allowed !important;
+    }
+
+    textarea {
+      height: 90px;
+      display: flex;
+      padding: $spacing-lg;
+      flex-direction: column;
+      align-items: flex-end;
+      align-self: stretch;
+      border-radius: $border-radius-base;
+      background: $color-gray-light;
+      border: none;
+      outline: none;
+      color: $color-black;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-sm; /* 71.429% */
+    }
+    .error {
+      color: $color-error;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-sm;
+      align-self: stretch;
+      margin-bottom: 0;
+    }
+    .inputError {
+      border-radius: $border-radius-base;
+      border: $border-width solid $color-error-border;
+      background: $color-error-bg;
+    }
+
+    .inputValid {
+      border-radius: $border-radius-base;
+      border: $border-width solid $color-success-border;
+      background: $color-success-bg;
+    }
+
+    .fullRow {
+      grid-column: span 2;
+    }
+  }
+  .dropdown {
+    width: 100%;
+  }
+
+  .labelColor {
+    color: $color-black;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base; /* 171.429% */
+  }
+  .labelTextarea {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .charCount {
+    color: $color-black;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs; /* 100% */
+  }
+  /* ACTION BUTTONS */
+  .actionRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 28px;
+    gap: $spacing-md;
+
+    button {
+      height: 42px;
+      padding: 0 22px;
+      border-radius: $border-radius-md;
+      font-size: $font-size-sm;
+      cursor: pointer;
+    }
+
+    .discardBtn {
+      display: flex;
+      padding: $spacing-sm $spacing-md;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-sm;
+      align-self: stretch;
+      border-radius: $border-radius-base;
+      border: $border-width-thin solid $color-primary;
+      color: $color-primary;
+      text-align: center;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-xs; /* 114.286% */
+      width: 194px;
+      &:disabled {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $spacing-sm;
+
+        cursor: not-allowed;
+        opacity: $opacity-disabled;
+      }
+    }
+
+    .saveBtn {
+      display: flex;
+      padding: $spacing-sm $spacing-md;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-sm;
+      align-self: stretch;
+      border-radius: $border-radius-base;
+      background: $color-primary;
+      color: $color-white;
+      text-align: center;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-xs; /* 114.286% */
+      border: none;
+      outline: none;
+
+      width: 194px;
+      &:disabled {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        cursor: not-allowed;
+        opacity: $opacity-disabled;
+      }
+    }
+  }
+}
+.discardButton {
+  background: $color-error;
+}
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+
+    .fullRow {
+      grid-column: span 1;
+    }
+  }
+}

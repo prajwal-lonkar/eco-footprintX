@@ -1,0 +1,296 @@
+@use '@styles/abstracts' as *;
+
+@use '@styles/abstracts/variables' as *;
+.howToRecycleSteps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+}
+.addSteps {
+  display: flex;
+  padding: $spacing-sm;
+  width: 100%;
+  align-items: center;
+  gap: $spacing-md;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  border: $border-width-thin dashed $color-gray-border-light;
+  background: $color-white;
+  cursor: pointer;
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-md;
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}
+.instructionBox {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  align-self: stretch;
+  width: 100%;
+  justify-content: center;
+}
+
+.contentWidth {
+  display: flex;
+  gap: $spacing-md;
+  flex: 1;
+  // max-width: 1000px;
+  width: 100%;
+}
+.dragPlaceholder {
+  width: 14px;
+}
+.deletePlaceholder {
+  width: 30px;
+}
+.noPlaceholder {
+  display: none;
+}
+.constrained {
+  // max-width: 1000px;
+  width: 100%;
+}
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* normal view */
+.fullWidth {
+  max-width: 100%;
+}
+.showText {
+  display: flex;
+  color: $color-content-tertiary;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  margin: 0;
+}
+.hideText {
+  display: none;
+}
+.instructionContent {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-md;
+  gap: $spacing-lg;
+  justify-content: space-between;
+  align-items: flex-start;
+  // flex: 1 0 0;
+  flex: 1;
+  width: 100%;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-gray-border-light;
+  background: $color-white;
+  .instructioWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    h2 {
+      color: #344b44;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      line-height: normal;
+    }
+    p {
+      color: $color-text-secondary-444;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-regular;
+      line-height: normal;
+    }
+
+    .btnWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-xs;
+    }
+  }
+}
+
+.inputWrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  flex: 1 0 0;
+  label {
+    color: $color-black;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm; /* 125% */
+    .required {
+      color: $color-error;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-sm;
+    }
+  }
+  input {
+    display: flex;
+    padding: $spacing-md 22px $spacing-md $spacing-lg;
+    align-items: center;
+    gap: 962px;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    background: $color-gray-light;
+
+    border: none;
+
+    outline: none;
+    &::placeholder {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-base; /* 171.429% */
+    }
+  }
+  textarea {
+    display: flex;
+    padding: $spacing-lg;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    background: $color-gray-light;
+    border: none;
+
+    outline: none;
+    &::placeholder {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-base; /* 171.429% */
+    }
+  }
+}
+
+.error {
+  color: $color-error;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  font-style: normal;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-sm;
+  align-self: stretch;
+  margin-bottom: 0;
+}
+.inputError {
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-error-border;
+  background: $color-error-bg;
+}
+
+.inputValid {
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-success-border;
+  background: $color-success-bg;
+}
+.deleteBtn {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  border-radius: $border-radius-lg;
+  background: $color-error-bg;
+  cursor: pointer;
+}
+.editBtn {
+  display: flex;
+  padding: $spacing-xs;
+  align-items: center;
+  gap: $spacing-sm;
+  border-radius: $border-radius-base;
+  background: $color-gray-light;
+  cursor: pointer;
+}
+.BtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+  .discardBtn {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    border: $border-width-thin solid $color-primary;
+    color: $color-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs; /* 114.286% */
+  }
+
+  .saveChangesBtn {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    align-self: stretch;
+    border-radius: $border-radius-base;
+    background: $color-primary;
+
+    color: $color-white;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs; /* 114.286% */
+    border: none;
+
+    &:disabled {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-sm;
+
+      cursor: not-allowed;
+      opacity: $opacity-disabled;
+    }
+  }
+}
+.modalWrapper h2 {
+  font-size: $font-size-base;
+}
+.removeButton {
+  background: $color-error !important;
+}

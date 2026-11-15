@@ -1,0 +1,56 @@
+@use '@styles/abstracts' as *;
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: $font-family-base;
+  font-size: $font-size-xxs;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+
+  border-radius: 100px;
+  display: flex;
+  padding: $spacing-xxxs-small $spacing-xxxs-medium;
+  align-items: center;
+  gap: $spacing-xxxs;
+}
+
+.icon {
+  display: inline-block;
+  width: 13.818px;
+  height: 13.818px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.label {
+  display: inline-block;
+}
+
+/* Higher impact */
+.higher {
+  color: $color-error;
+  background: $color-error-bg;
+}
+
+/* Similar impact */
+.similar {
+  color: $color-warning-dark;
+
+  background: $color-warning-bg;
+}
+
+/* Lower impact*/
+.lower {
+  color: $color-success-dark;
+
+  background: $color-success-bg;
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    font-size: 9px;
+  }
+}

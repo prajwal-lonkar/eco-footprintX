@@ -1,0 +1,79 @@
+@use '@styles/abstracts' as *;
+
+.overviewSection {
+  @include flex-column($spacing-xxxs);
+  color: $color-black;
+}
+
+.sectionTitle {
+  @include text-base($color-black);
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  line-height: normal;
+}
+
+.description {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  white-space: pre-wrap;
+
+  p {
+    margin: 0;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.guidedSection {
+  @include flex-column($spacing-3xl);
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-black;
+  gap:$spacing-3xl;
+}
+
+.guidedText {
+  margin: 0;
+  line-height: normal;
+  white-space: pre-wrap;
+  font-weight: $font-weight-medium;
+}
+
+.stepsBox {
+  @include flex-column($spacing-lg);
+  border: $border-width-thin solid $color-gray-border;
+  border-radius: $border-radius-xl;
+  padding: $spacing-md;
+
+  ol {
+    @include flex-column($spacing-lg);
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+
+    li {
+      margin: 0;
+      padding-left: 0;
+      line-height: normal;
+      white-space: pre-wrap;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: $color-black;
+    }
+  }
+}
+
+.stepBold {
+  font-family: $font-family-base;
+  font-weight: $font-weight-semibold;
+}
+
+.completionText {
+  margin: 0;
+  line-height: normal;
+  white-space: pre-wrap;
+  font-weight: $font-weight-medium;
+}

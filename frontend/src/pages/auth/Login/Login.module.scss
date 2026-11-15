@@ -1,0 +1,100 @@
+@use '@styles/abstracts' as *;
+
+.container {
+  @include flex-column($spacing-3xl);
+  align-items: center;
+  max-width: $input-max-width;
+}
+
+.title {
+  @include text-base;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-xl;
+  line-height: 1.15;
+  text-align: center;
+  width: 100%;
+}
+
+.formContainer {
+  @include flex-column($spacing-xl);
+}
+
+.inputWrapper {
+  @include flex-column($spacing-xs);
+  margin-bottom: 0 !important;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  @include form-label;
+}
+
+.input {
+  @include form-input-base;
+  padding-right: 22px !important;
+
+  &.is-invalid,
+  &:global(.is-invalid) {
+    @include form-input-invalid;
+  }
+}
+
+.iconCheck {
+  @include icon-check;
+}
+
+.iconClear {
+  @include icon-interactive;
+}
+
+.iconClearPassword {
+  @include icon-interactive(44px);
+}
+
+.iconEye {
+  @include icon-interactive;
+}
+
+.passwordSection {
+  @include flex-column($spacing-base);
+}
+
+.forgotPasswordLink {
+  @include link-primary;
+  font-family: $font-family-base;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  align-self: flex-start;
+}
+
+.actionsContainer {
+  margin-top: $spacing-2xl;
+  @include flex-column($spacing-lg);
+}
+
+.button {
+  @include button-primary;
+}
+
+.signUpText {
+  @include text-base($color-gray-medium);
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  text-align: center;
+
+  a {
+    @include link-primary;
+  }
+}
+
+.error {
+  @include error-text;
+}

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="40" height="40">
+  <defs>
+    <!-- Subtle Globe Shading Gradient -->
+    <radialGradient id="globeGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#f4f9eb" />
+      <stop offset="100%" stop-color="#dcebc2" />
+    </radialGradient>
+
+    <!-- Primary Eco Green Gradient -->
+    <linearGradient id="ecoGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8cc61e" />
+      <stop offset="100%" stop-color="#6fa60c" />
+    </linearGradient>
+
+    <!-- Clip Path for the Central Globe -->
+    <clipPath id="globeClip">
+      <circle cx="220" cy="185" r="88" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer Circular Badge Background -->
+  <circle cx="200" cy="200" r="192" fill="#ffffff" stroke="url(#ecoGreen)" stroke-width="6" />
+  <circle cx="200" cy="200" r="181" fill="none" stroke="#82bc16" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6" />
+
+  <!-- Circuit Lines Radiating from Left Hexagons to Globe -->
+  <g fill="none" stroke="#82bc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <!-- Top Circuit Line -->
+    <polyline points="118,112 155,112 175,132 195,132" />
+    <circle cx="195" cy="132" r="3" fill="#82bc16" />
+    
+    <!-- Middle Circuit Line -->
+    <polyline points="92,188 128,188 142,188" />
+    
+    <!-- Bottom Circuit Line -->
+    <polyline points="118,264 155,264 175,244 195,244" />
+    <circle cx="195" cy="244" r="3" fill="#82bc16" />
+
+    <!-- Right-side Accent Circuit Lines -->
+    <polyline points="295,140 325,140 342,123 365,123" />
+    <circle cx="365" cy="123" r="3" fill="#82bc16" />
+    
+    <polyline points="305,200 345,200 360,215 372,215" />
+    <circle cx="372" cy="215" r="3" fill="#82bc16" />
+    
+    <polyline points="282,255 312,255 330,273 350,273" />
+    <circle cx="350" cy="273" r="3" fill="#82bc16" />
+  </g>
+
+  <!-- Central Globe -->
+  <g>
+    <!-- Globe Base -->
+    <circle cx="220" cy="185" r="88" fill="url(#globeGrad)" stroke="#7cb512" stroke-width="3" />
+    
+    <!-- Stylized Continents (Clipped inside Globe) -->
+    <g clip-path="url(#globeClip)" fill="url(#ecoGreen)">
+      <!-- Europe / Eurasia -->
+      <path d="M195,112 C205,105 225,102 242,108 C258,114 278,112 292,124 C304,135 302,155 290,168 C280,178 268,175 262,186 C256,196 250,188 244,178 C238,168 232,168 225,172 C218,175 212,164 205,162 C196,159 192,152 198,144 C203,137 190,132 194,122 Z" />
+      <!-- Africa -->
+      <path d="M188,168 C202,165 218,172 226,184 C234,196 232,212 224,228 C218,240 212,254 204,254 C196,254 192,238 188,224 C184,212 172,204 172,190 C172,178 178,170 188,168 Z" />
+      <!-- Greenland / Northern Islands -->
+      <path d="M172,115 C182,110 192,112 190,122 C188,130 176,132 170,126 Z" />
+      <!-- Southeast Asia / Australia hint -->
+      <path d="M275,205 C288,202 300,210 298,224 C296,236 282,240 274,232 C268,226 268,210 275,205 Z" />
+    </g>
+    
+    <!-- Subtle Inner Rim Highlight -->
+    <circle cx="220" cy="185" r="88" fill="none" stroke="#7cb512" stroke-width="2.5" />
+  </g>
+
+  <!-- Hexagon 1 (Top Left): Wind Turbine -->
+  <g transform="translate(95, 112)">
+    <polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" fill="#ffffff" stroke="#82bc16" stroke-width="2.5" />
+    <polygon points="0,-23 20,-11.5 20,11.5 0,23 -20,11.5 -20,-11.5" fill="none" stroke="#82bc16" stroke-width="0.8" opacity="0.6" />
+    <!-- Turbine Icon -->
+    <line x1="0" y1="-2" x2="0" y2="16" stroke="#7cb512" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M0,-2 L-2,-15 L2,-15 Z" fill="#7cb512" />
+    <path d="M0,-2 L12,5 L10,8 Z" fill="#7cb512" />
+    <path d="M0,-2 L-12,5 L-10,8 Z" fill="#7cb512" />
+    <circle cx="0" cy="-2" r="2.2" fill="#ffffff" stroke="#7cb512" stroke-width="1.5" />
+  </g>
+
+  <!-- Hexagon 2 (Middle Left): Eco Leaf & Droplet -->
+  <g transform="translate(68, 188)">
+    <polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" fill="#ffffff" stroke="#82bc16" stroke-width="2.5" />
+    <polygon points="0,-23 20,-11.5 20,11.5 0,23 -20,11.5 -20,-11.5" fill="none" stroke="#82bc16" stroke-width="0.8" opacity="0.6" />
+    <!-- Leaf Icon -->
+    <path d="M-10,10 C-10,-4 2,-12 12,-12 C12,0 4,12 -10,10 Z" fill="#7cb512" />
+    <path d="M-11,11 L4,-4" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Hexagon 3 (Bottom Left): Solar / Clean Energy -->
+  <g transform="translate(95, 264)">
+    <polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" fill="#ffffff" stroke="#82bc16" stroke-width="2.5" />
+    <polygon points="0,-23 20,-11.5 20,11.5 0,23 -20,11.5 -20,-11.5" fill="none" stroke="#82bc16" stroke-width="0.8" opacity="0.6" />
+    <!-- Sun & Panel Icon -->
+    <circle cx="0" cy="-9" r="4.5" fill="#7cb512" />
+    <polygon points="-11,2 11,2 14,12 -14,12" fill="#7cb512" />
+    <line x1="-12" y1="7" x2="12" y2="7" stroke="#ffffff" stroke-width="1" />
+    <line x1="0" y1="2" x2="0" y2="12" stroke="#ffffff" stroke-width="1" />
+    <line x1="0" y1="12" x2="0" y2="16" stroke="#7cb512" stroke-width="2" />
+  </g>
+
+  <!-- Bottom Curved Ribbon / Accent Arc -->
+  <path d="M 110,322 A 145,145 0 0,0 295,318" fill="none" stroke="url(#ecoGreen)" stroke-width="5" stroke-linecap="round" />
+</svg>

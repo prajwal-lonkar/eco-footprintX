@@ -1,0 +1,62 @@
+@use '@styles/abstracts' as *;
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.fullScreenBackground {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Rotates the whole SVG */
+.ring {
+  width: 71px;
+  height: 71px;
+  animation: rotate 0.7s linear infinite;
+}
+
+/* Animate green border fill */
+.progress {
+  stroke: #344b44;
+  stroke-width: 6;
+  stroke-linecap: round;
+
+  stroke-dasharray: 40 200; /* 25% fill */
+  animation: fillArc 2s ease-in-out infinite;
+}
+
+/* Smooth infinite rotation */
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// @keyframes fillArc {
+//   0% {
+//     stroke-dasharray: 40 200; /* 25% */
+//   }
+//   25% {
+//     stroke-dasharray: 80 200; /* 50% */
+//   }
+//   50% {
+//     stroke-dasharray: 120 200; /* 75% */
+//   }
+//   75% {
+//     stroke-dasharray: 200 200; /* 100% */
+//   }
+//   75.1% {
+//     stroke-dasharray: 40 200;
+//   }
+//   100% {
+//     stroke-dasharray: 40 200;
+//   }
+// }

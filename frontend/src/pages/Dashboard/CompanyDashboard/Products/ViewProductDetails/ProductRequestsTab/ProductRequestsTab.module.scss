@@ -1,0 +1,175 @@
+@use '@styles/abstracts' as *;
+
+// Reuse common products table styles
+@include products-table-common-styles;
+
+.wrapper {
+  padding: 0;
+  position: relative;
+  top: -$spacing-xl-small;
+}
+
+.tableCell {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xxl;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  min-width: 0;
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns:
+    minmax(140px, 1.8fr)
+    minmax(195px, 1.0fr)
+    minmax(145px, 1.5fr)
+    minmax(210px, 2.2fr)
+    minmax(90px, 1.3fr)
+    minmax(130px, 1.6fr);
+  gap: $spacing-lg;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+
+  h1 {
+    color: $color-gray-role-label;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    margin: 0;
+    white-space: nowrap;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  h1:nth-child(2) {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+}
+
+.labelWithIcon {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  width: 100%;
+  height: $line-height-sm;
+  flex-shrink: 0;
+}
+.infoIcon{
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  position: relative;
+  top: -1px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns:
+    minmax(140px, 1.8fr)
+    minmax(195px, 1.0fr)
+    minmax(145px, 1.5fr)
+    minmax(210px, 2.2fr)
+    minmax(90px, 1.3fr)
+    minmax(130px, 1.6fr);
+  gap: $spacing-lg;
+}
+
+.cell {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  overflow: visible;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: $spacing-base 0;
+}
+
+// Date column (reuses pattern from ComponentAndServices)
+.dateCell {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-base 0;
+  overflow: hidden;
+}
+
+.dateText {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-content-primary;
+}
+
+.dateDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  display: inline-block;
+}
+
+.dateDot--red {
+  background: $color-error;
+}
+
+.dateDot--green {
+  background: $color-success-dark;
+}
+
+.dateDot--yellow {
+  background: $color-warning-light;
+}
+
+.emptyStateWrapper {
+  display: flex;
+  height: 367px;
+  padding: $spacing-lg;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-xl;
+  align-self: stretch;
+  border-radius: $spacing-md;
+  background: $color-gray-light;
+}
+
+.emptyStateContent {
+  display: flex;
+  width: 588px;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+
+  h3 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    margin: 0;
+  }
+
+  p {
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+}
+
+.tableRow:last-child:hover {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

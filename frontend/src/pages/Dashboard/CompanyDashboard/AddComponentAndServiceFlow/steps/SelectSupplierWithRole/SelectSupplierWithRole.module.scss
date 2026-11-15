@@ -1,0 +1,207 @@
+@use '@styles/abstracts' as *;
+
+.supplierSearchSection {
+  display: flex;
+  padding: $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-border-section;
+}
+
+.supplierDetailsSection {
+  display: flex;
+  padding: $spacing-lg;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-border-section;
+}
+
+.inputError {
+  @include form-input-invalid;
+  background: $color-error-bg !important;
+}
+
+.error {
+  @include error-text;
+}
+
+.roleDropdownDisabled {
+  opacity: $opacity-disabled;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+.resultName {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-role-label;
+}
+
+.noResults {
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-family-base;
+  font-size: $font-size-xs;
+  color: $color-gray-dark;
+  text-align: center;
+}
+
+/* Role Selection Dropdown */
+
+.roleDropdownWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.roleDropdownInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: $input-height;
+  padding: $spacing-xxxs $spacing-lg;
+  border-radius: $border-radius-base;
+  border: $border-width solid $color-gray-light;
+  background: $color-gray-light;
+  cursor: pointer;
+  transition: border-color $transition-duration ease;
+  box-sizing: border-box;
+
+
+  &:focus-within {
+    border-color: $cool-Green-300;
+  }
+}
+
+.rolePlaceholder {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-gray-medium;
+}
+
+.roleSelectedText {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+}
+
+.roleDropdownIcon {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  flex-shrink: 0;
+}
+
+.roleDropdownList {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  width: 100%;
+  background: $color-white;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  border: $border-width-thin solid $color-gray-border;
+  border-top: none;
+  max-height: fit-content;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.roleDropdownListUp {
+  top: auto;
+  bottom: calc(100% + 1px);
+  border-radius: $border-radius-base $border-radius-base 0 0;
+  border-top: $border-width-thin solid $color-gray-border;
+  border-bottom: none;
+}
+
+.roleOption {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-sm $spacing-lg;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: $color-bg-light;
+  }
+}
+
+.roleCheckbox {
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+  flex-shrink: 0;
+}
+
+.roleOptionText {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+}
+
+.selectedRolesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+  width: 100%;
+}
+
+.roleChip {
+  display: flex;
+  padding: $spacing-xs $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-lg;
+  border-radius: 100px;
+  background: $cool-green-50;
+  box-sizing: border-box;
+}
+
+.roleChipText {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  color: $color-black;
+}
+
+.roleChipClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: opacity $transition-duration ease;
+
+  &:hover {
+    opacity: $opacity-hover;
+  }
+}
+
+.roleChipCloseIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}

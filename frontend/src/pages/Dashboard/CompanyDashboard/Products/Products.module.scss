@@ -1,0 +1,271 @@
+@use '@styles/abstracts' as *;
+
+// Include common products table styles
+@include products-table-common-styles;
+
+// Component-specific styles and overrides
+.importroductBtn {
+  display: flex;
+  padding: $spacing-sm $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-xs;
+    border-radius: $border-radius-md;
+    border: $border-width-thin solid $color-primary;
+    color: $color-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+  cursor: pointer;
+}
+// Empty State
+.emptyStateWrapper {
+  display: flex;
+  height: 367px;
+  padding: $spacing-lg;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-xl;
+  align-self: stretch;
+  border-radius: $spacing-md;
+    background: $color-gray-light;
+}
+
+.emptyStateContent {
+  display: flex;
+  width: 588px;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  h3 {
+    color: $color-content-primary;
+      font-family: $font-family-base;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    margin: 0;
+  }
+
+  p {
+    color: $color-content-primary;
+    text-align: center;
+    font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}
+
+// Override tableHead to use h1 instead of p
+.tableHead {
+  h1 {
+    color: $color-gray-role-label;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+    margin: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+// Badge styles
+.badge {
+  display: flex;
+  padding: $spacing-xxs $spacing-xxxs-medium;
+  align-items: center;
+  gap: $spacing-xxxs-medium;
+  border-radius: $border-radius-md;
+  width: fit-content;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+}
+
+.badgeGreen {
+  background: $color-success-bg;
+  .dot {
+    background-color: $color-success-dark;
+  }
+}
+
+.badgeYellow {
+  background: $color-warning-bg;
+  .dot {
+    background-color: $color-warning-dark;
+  }
+}
+
+.badgePurple {
+  background: $color-accent-2-bg;
+  .dot {
+    background-color: $color-accent-2;
+  }
+}
+
+.badgeGray {
+  background: $color-gray-light;
+
+  .dot {
+    background-color: $color-gray-dark;
+  }
+}
+// Column width overrides for CompanyDashboard
+.tableHead h1:nth-child(1),
+.tableRow .cell:nth-child(1) {
+  width: 250px;
+}
+
+.tableHead h1:nth-child(2),
+.tableRow .cell:nth-child(2) {
+  width: 150px;
+}
+
+.tableHead h1:nth-child(3),
+.tableRow .cell:nth-child(3) {
+  width: 120px;
+}
+
+.tableHead h1:nth-child(4),
+.tableRow .cell:nth-child(4) {
+  width: 160px;
+}
+
+.tableHead h1:nth-child(5),
+.tableRow .cell:nth-child(5) {
+  width: 150px;
+}
+
+.tableHead h1:nth-child(6),
+.tableRow .cell:nth-child(6) {
+  width: 60px;
+}
+
+.tableRow > span:first-child .cell {
+  cursor: pointer;
+}
+// Action menu styles
+.actionWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.moreIcon {
+  font-size: 18px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  right: 58%;
+  top: 80%;
+  display: flex;
+  padding: $spacing-xs;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  background: $color-dark-forest-50;
+  width: 112px;
+  color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius-md;
+    border: $border-width-thin solid $color-gray-border-light;
+  box-shadow: $shadow-dropdown-menu;
+}
+
+.removeButton {
+  background: $color-error !important;
+}
+
+.dropdownMenu button:hover {
+  background: $color-bg-muted;
+}
+
+// Modal styles
+.modalWrapper h2 {
+  font-size: $font-size-lg;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: $overlay-backdrop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+.modal {
+  display: flex;
+  width: 480px;
+  padding: $spacing-xl;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $spacing-2xl;
+    border-radius: $spacing-lg;
+    background: $color-white;
+  box-shadow: $shadow-shallow-below;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-self: stretch;
+
+  p {
+    margin-top: $spacing-xxxs-small;
+    font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-xxl;
+  }
+}
+
+.subContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.logo {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.goBackBtn {
+  display: flex;
+  padding: $spacing-sm $spacing-md;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  border-radius: $border-radius-md;
+    border: $border-width-thin solid $color-primary;
+    color: $color-primary;
+  text-align: center;
+  font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs;
+}

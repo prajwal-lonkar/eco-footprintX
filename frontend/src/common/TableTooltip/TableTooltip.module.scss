@@ -1,0 +1,84 @@
+@use '@styles/abstracts' as *;
+
+.tooltipWrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  .tooltipBox {
+    display: flex;
+    padding: $spacing-md $spacing-xs;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    position: absolute;
+    bottom: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-white;
+    color: $color-black;
+    border: $border-width-thin solid $color-border-tooltip;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    z-index: 10;
+    margin-bottom: $spacing-xs;
+    font-size: $font-size-xxs;
+    width: max-content;
+    max-width: 350px;
+
+    text-align: left;
+    word-break: break-word;
+    white-space: normal;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        color: $color-content-tertiary;
+        font-family: $font-family-base;
+        font-size: $font-size-xs;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-xs; /* 133.333% */
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: -$spacing-xxxs-medium;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: $color-white;
+
+    z-index: -1;
+  }
+
+  // For last column, align tooltip right instead of center
+  &:last-child .tooltipBox {
+    left: auto;
+    right: 0;
+    transform: none;
+
+    .arrow {
+      left: 88%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+  &:first-child .tooltipBox {
+    right: auto;
+    left: 0;
+    transform: none;
+
+    .arrow {
+      right: 90%;
+      left: 20%;
+    }
+  }
+}

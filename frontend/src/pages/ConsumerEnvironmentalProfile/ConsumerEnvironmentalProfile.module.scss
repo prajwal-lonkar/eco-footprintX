@@ -1,0 +1,648 @@
+@use '@styles/abstracts' as *;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.headerWrapper {
+  display: flex;
+  max-width: 1440px;
+  width: 100%;
+  padding: $spacing-xl $spacing-3xl;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.headerTitleWrap {
+  display: flex;
+  align-items: center;
+  gap: 4.876px;
+  img {
+    width: '39.011px';
+    height: '39.011px';
+  }
+}
+.title {
+  color: $color-dark-teal;
+  font-family: $font-family-base;
+  font-size: 19.973px;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  width: 88px;
+
+  margin: 0;
+  > *:not(:last-child) {
+    margin-bottom: -8.777px;
+  }
+}
+.horizontalLine {
+  border-bottom: $border-width-thin solid $color-gray-border-light;
+  width: 100%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  padding: $spacing-3xl;
+  max-width: 1440px;
+  width: 100%;
+}
+.productCardWrapper {
+  display: flex;
+  width: 32.96%;
+  height: 798px;
+  flex-direction: column;
+  align-items: center;
+  gap: -55px;
+  flex-shrink: 0;
+  position: relative;
+}
+/* LEFT CARD */
+.productCard {
+  display: flex;
+
+  width: 100%;
+  height: 747px;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  text-align: center;
+
+  border-radius: 24px;
+
+  background-image: url('@assets/images/imageCard.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  .imageWrapper {
+    padding: 0 23px;
+    width: 100%;
+    height: 550px;
+  }
+  img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 207.51/532.49;
+    object-fit: contain;
+    background-size: cover;
+    background-attachment: fixed;
+    background-origin: border-box;
+    background-clip: border-box;
+  }
+}
+
+.cardNoteDesktop {
+  display: flex;
+  padding: $spacing-xl-small;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: stretch;
+  border-radius: 24px;
+  background: #c6e6e2;
+  text-align: left;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: italic;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  position: absolute;
+  bottom: 0;
+}
+.cardNoteMobile {
+  display: none;
+}
+/* RIGHT */
+
+.scrollbarWrapper {
+  width: 67.04%;
+
+  max-height: fit-content;
+
+  height: 100%;
+  margin-right: $spacing-xxxs;
+  scrollbar-color: initial !important;
+}
+
+:global(.dropdown-scroll) {
+  scrollbar-width: thin !important;
+  scrollbar-color: initial !important;
+}
+.scrollbarWrapper::-webkit-scrollbar {
+  width: 4px !important;
+  cursor: pointer !important;
+}
+.scrollbarWrapper::-webkit-scrollbar-track {
+  background: transparent !important;
+  margin-right: $spacing-xxxs !important;
+}
+
+.scrollbarWrapper::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  height: 32px !important;
+  border-radius: $border-radius-base !important;
+  margin-right: $spacing-xxxs-small !important;
+  background: $color-content-disabled !important;
+  scrollbar-color: initial !important;
+}
+.scrollbarWrapper::-webkit-scrollbar-thumb:hover {
+  border-radius: 10px !important;
+  background: #8f8f8f !important;
+  cursor: pointer !important;
+}
+.fullWidthDetails {
+  width: 100%;
+  height: auto;
+  max-height: fit-content;
+}
+.details {
+  display: flex;
+
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+}
+.infoWrapper {
+  width: 99%;
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  align-self: stretch;
+  h2 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    align-self: stretch;
+    margin: 0;
+  }
+  .subtitle {
+    color: $color-text-secondary-444;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    margin: 0;
+  }
+  .noSubTitle {
+    display: none;
+  }
+}
+
+.environmentalImpactWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  align-self: stretch;
+  width: 100%;
+  margin-top: $spacing-3xl;
+  .impactHeader {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: flex-start;
+    align-self: stretch;
+    h3 {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-lg;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      line-height: normal;
+      letter-spacing: 0.4px;
+      margin: 0;
+    }
+
+    p {
+      color: $color-text-secondary-444;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      letter-spacing: 0.32px;
+      margin: 0;
+    }
+  }
+}
+
+/* Impact Cards */
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+}
+
+.noImpactWrapper {
+  display: flex;
+  padding: $spacing-lg $spacing-md;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xxxs-small;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-no-impact-card-border;
+  background: $color-white;
+  h2 {
+    color: $color-content-secondary;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    letter-spacing: 0.32px;
+  }
+  p {
+    color: $color-text-secondary-444;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    letter-spacing: 0.24px;
+  }
+}
+.noImpactFullWidth {
+  grid-column: 1 / -1;
+}
+/* Recycling */
+.howToRecycleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  align-self: stretch;
+}
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  align-self: stretch;
+
+  h2 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-lg;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    align-self: stretch;
+  }
+  p {
+    color: $color-text-secondary-444;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+}
+
+.recycleSteps {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  align-self: stretch;
+  padding: 0;
+  width: 99%;
+  margin-bottom: 0;
+  li {
+    display: flex;
+    padding: $spacing-md;
+    align-items: flex-start;
+    gap: $spacing-md;
+    align-self: stretch;
+    border-radius: $border-radius-xl;
+    border: $border-width-thin solid $color-gray-border-light;
+    background: $color-white;
+
+    span {
+      display: flex;
+      padding: 6.667px 11px 6.333px $spacing-sm;
+      justify-content: center;
+      align-items: center;
+      border-radius: 166.667px;
+      background: $color-fresh-green-100;
+
+      color: $color-dark-teal;
+      font-family: $font-family-base;
+      font-size: $font-size-lg;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      letter-spacing: 0.4px;
+    }
+    .stepsWrap {
+      display: flex;
+
+      flex-direction: column;
+    }
+    .stepTitle {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      line-height: normal;
+      margin: 0;
+    }
+    .stepSubTitle {
+      color: $color-content-secondary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-regular;
+      line-height: normal;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .wrapper {
+    position: relative;
+    background: #dcefed;
+  }
+  .wrapper > * {
+    position: relative;
+    z-index: 1;
+  }
+  .noDataBackground {
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  .mobileVector {
+    background-image: url('@assets/images/Vector 1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    pointer-events: none;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 250px;
+
+    z-index: 1;
+  }
+
+  .headerWrapper {
+    padding: $spacing-3xl $spacing-xl 30px $spacing-xl;
+    border-bottom: 0px;
+  }
+
+  .headerTitleWrap {
+    gap: 3.331px;
+    img {
+      width: 26.645px;
+      height: 26.645px;
+    }
+    .title {
+      font-size: 13.642px;
+
+      line-height: 14px;
+    }
+  }
+  .horizontalLine {
+    display: none;
+  }
+  .container {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+
+  /* Product card */
+
+  .productCardWrapper {
+    height: auto;
+
+    width: 100%;
+    position: relative;
+  }
+  .productCard {
+    width: 100%;
+    height: auto;
+
+    background-image: none;
+    background-repeat: no-repeat;
+    //  height: 400px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .imageWrapper {
+      height: 250px;
+      width: 100%;
+      padding: 0 $spacing-xl;
+    }
+  }
+  .productCard img {
+    padding-bottom: 34px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 108.26/277.8;
+  }
+
+  .cardNoteDesktop {
+    display: none;
+  }
+  .cardNoteMobile {
+    font-size: 13px;
+    padding: $spacing-md;
+    border-radius: $border-radius-xxl;
+
+    position: static;
+
+    background: white;
+    border-radius: $border-radius-xxl $border-radius-xxl 0 0;
+
+    font-size: 13px;
+    padding: $spacing-md;
+    border-radius: $border-radius-xxl;
+
+    display: inline-flex;
+    height: auto;
+    padding: 17.829px 11.079px 53.171px 23.095px;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 24px;
+    background: $color-white;
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: italic;
+    font-weight: $font-weight-regular;
+    line-height: normal;
+    letter-spacing: 0.28px;
+  }
+
+  .scrollbarWrapper {
+    width: 100%;
+    margin-top: -36px;
+  }
+  /* Details */
+  .details {
+    width: 100%;
+    gap: 0;
+    z-index: 1;
+    height: 100%;
+  }
+  .infoWrapper {
+    display: flex;
+    padding: $spacing-xl;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xl;
+    align-self: stretch;
+    width: 100%;
+    border-top: $border-width-thin solid $color-gray-border-light;
+    background: $color-white;
+    border-radius: 24px;
+  }
+  .detailsWrapper {
+    gap: $spacing-xs;
+  }
+  .detailsWrapper h2 {
+    color: $color-dark-teal;
+    font-family: $font-family-base;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    letter-spacing: 0.48px;
+  }
+
+  .detailsWrapper .subtitle {
+    color: $color-text-secondary-444;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    letter-spacing: 0.28px;
+  }
+  .environmentalImpactWrapper {
+    width: 100%;
+    margin-top: 0;
+    .impactHeader {
+      h3 {
+        color: $color-dark-teal;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        font-style: normal;
+        font-weight: $font-weight-semibold;
+        line-height: normal;
+        letter-spacing: 0.32px;
+      }
+      p {
+        color: $color-text-secondary-444;
+        font-family: $font-family-base;
+        font-size: $font-size-xs;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: normal;
+        letter-spacing: 0.24px;
+      }
+    }
+  }
+  /* IMPACT GRID â†’ TWO COLUMNS */
+  .impactGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
+  .howToRecycleSection {
+    padding: $spacing-xl $spacing-xl $spacing-3xl $spacing-xl;
+  }
+  .titleWrapper h2 {
+    color: $color-dark-teal;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    letter-spacing: 0.32px;
+  }
+  .titleWrapper p {
+    font-size: $font-size-sm;
+  }
+  /* Recycling cards */
+  .recycleSteps li {
+    padding: $spacing-md;
+    gap: $spacing-md;
+  }
+  .scrollbarWrapper {
+    max-height: 100%;
+  }
+  .recycleSteps li {
+    .stepTitle {
+      color: $color-dark-teal;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      line-height: normal;
+    }
+    .stepSubTitle {
+      color: $color-text-secondary-444;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-regular;
+      line-height: normal;
+    }
+  }
+}
+@media (min-width: 577px) and (max-width: 950px) {
+  .mobileVector {
+    height: 450px;
+  }
+  .mobileVectorNodata {
+    height: 565px;
+  }
+  .productCard {
+    .imageWrapper {
+      height: 450px;
+    }
+  }
+}

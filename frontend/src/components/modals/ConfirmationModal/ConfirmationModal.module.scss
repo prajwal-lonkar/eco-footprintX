@@ -1,0 +1,125 @@
+@use '@styles/abstracts' as *;
+
+.confirmationModal {
+  :global(.modal-content) {
+    min-width: 480px !important;
+    width: 480px;
+    padding: 0;
+    border-radius: $spacing-lg;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+    border: none;
+  }
+}
+
+.modalContent {
+  @include flex-column(32px);
+  padding: $spacing-xl;
+}
+
+.contentFrame {
+  @include flex-column($spacing-lg);
+}
+
+.titleRow {
+  display: flex;
+  gap: $spacing-md;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.icon {
+  width: $spacing-xl;
+  height: $spacing-xl;
+  flex-shrink: 0;
+}
+
+.title {
+  @include text-base;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+  flex-shrink: 0;
+}
+
+.message {
+  @include text-base;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  line-height: 1.2;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-lg;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.confirmButton {
+  flex: 1;
+  min-width: 0;
+  padding: $spacing-sm $spacing-md !important;
+  border-radius: $border-radius-base !important;
+  font-family: $font-family-base !important;
+  font-size: $font-size-sm !important;
+  font-weight: $font-weight-medium !important;
+  line-height: $line-height-xs !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  background: $color-primary !important;
+  border: none !important;
+  color: $color-white !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: opacity $transition-duration !important;
+
+  &:hover:not(:disabled) {
+    opacity: $opacity-hover !important;
+  }
+
+  &:focus,
+  &:active {
+    background: $color-primary !important;
+    box-shadow: none !important;
+  }
+
+  &:disabled {
+    opacity: $opacity-disabled !important;
+    cursor: not-allowed !important;
+  }
+}
+
+.cancelButton {
+  flex: 1;
+  min-width: 0;
+  padding: $spacing-sm $spacing-md !important;
+  border-radius: $border-radius-base !important;
+  font-family: $font-family-base !important;
+  font-size: $font-size-sm !important;
+  font-weight: $font-weight-medium !important;
+  line-height: $line-height-xs !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: $border-width-thin solid $color-primary !important;
+  color: $color-primary !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: opacity $transition-duration !important;
+
+  &:hover:not(:disabled) {
+    opacity: $opacity-hover !important;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+
+  &:disabled {
+    opacity: $opacity-disabled !important;
+    cursor: not-allowed !important;
+  }
+}

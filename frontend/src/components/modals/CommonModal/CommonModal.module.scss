@@ -1,0 +1,134 @@
+@use '@styles/abstracts' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: $overlay-backdrop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+.modal {
+  display: flex;
+  width: 480px;
+  padding: $spacing-xl;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $spacing-3xl;
+  border-radius: $border-radius-xxl;
+  background: $color-white;
+
+  /* Shallow / Below */
+  box-shadow: $shadow-shallow-below;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  align-self: stretch;
+  p {
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-xxl; /* 16.8px */
+  }
+}
+
+.logo {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.subContent {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+  color: $color-black;
+  font-family: $font-family-base;
+  font-size: $font-size-lg;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-base; /* $line-height-xxl */
+}
+h2 {
+  color: $color-black;
+  font-family: $font-family-base;
+  font-size: $font-size-lg;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-base; /* $line-height-xxl */
+  margin: 0;
+}
+
+p {
+  color: $color-black;
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-xxl; /* 16.8px */
+  align-self: stretch;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: $spacing-lg;
+  align-self: stretch;
+  .cancelBtn {
+    border-radius: $border-radius-base;
+    border: $border-width-thin solid $color-primary;
+    flex: 1 0 0;
+    color: $color-primary;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs; /* 114.286% */
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    align-self: stretch;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .confirmBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    flex: 1 0 0;
+    border-radius: $border-radius-base;
+    background: $color-primary;
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    align-self: stretch;
+    color: $color-white;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs; /* 114.286% */
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}

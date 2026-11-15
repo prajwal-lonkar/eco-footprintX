@@ -1,0 +1,92 @@
+@use '@styles/abstracts' as *;
+
+.content {
+  @include flex-column($spacing-xl);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  align-self: stretch;
+}
+.helperText {
+  margin-top: $spacing-xs;
+}
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xxxs;
+  align-self: stretch;
+}
+.subTitle {
+  color: $color-content-tertiary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}
+
+.summaryWrapper {
+  display: flex;
+  padding: $spacing-lg;
+  align-items: stretch;
+  gap: $spacing-xl;
+  align-self: stretch;
+  border-radius: $border-radius-xl;
+  background: $color-white;
+}
+
+.summaryWrapper > * {
+  flex: 0 0 calc((100% - 48px) / 3);
+  max-width: calc((100% - 48px) / 3);
+}
+.summaryWrapper.summaryWrapper > * > :first-child {
+  flex: 0 0 auto;
+}
+.versionedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  width: 100%;
+  padding: $spacing-lg;
+  border-radius: $border-radius-xl;
+  background: $color-white;
+}
+
+.versionedSection {
+  border-radius: $border-radius-xl;
+  background: $color-gray-light;
+
+}
+
+.versionedSectionTitle {
+  margin: $spacing-md 0;
+  padding: 0 $spacing-md;
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+}
+
+.summaryWrapperInAccordion {
+  margin-top: 0;
+  padding: 0 $spacing-md $spacing-md;
+  gap: $spacing-md;
+  border-radius: 0;
+  background: transparent;
+}
+
+.summaryWrapperInAccordion > * {
+  flex: 0 0 calc((100% - 24px) / 3);
+  max-width: calc((100% - 24px) / 3);
+}
+.summaryWrapperInAccordion.summaryWrapperInAccordion > * > :first-child {
+  flex: 0 0 auto;
+}

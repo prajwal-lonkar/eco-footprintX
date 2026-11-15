@@ -1,0 +1,457 @@
+@use '@styles/abstracts' as *;
+
+.headerWrapper {
+  display: flex;
+  padding: $spacing-lg $spacing-xl;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: $border-width-thin solid $color-border-section;
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $color-gray-role-label;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  cursor: pointer;
+
+  .backIcon {
+    width: $icon-size-regular;
+    height: $icon-size-regular;
+  }
+}
+
+.componentName {
+  color: $color-content-primary;
+  font-family: $font-family-base;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  line-height: normal;
+  margin: 0;
+  overflow-wrap: anywhere;
+  max-width: 422px;
+  display: block;
+}
+
+.Wrapper {
+  padding: $spacing-3xl $spacing-xl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.componentDetailWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  align-self: stretch;
+  width: 100%;
+
+  .headerRow {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-md;
+    width: 100%;
+    justify-content: space-between;
+
+    .companyInfo {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      flex: 1 0 0;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 53.097px;
+        background: $cool-green-50;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .title {
+      color: $content-state-disabled;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+    }
+
+    .editBtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .compoName {
+      display: flex;
+      gap: $spacing-xs;
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      align-items: center;
+    }
+
+    .btnWrapper {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+
+      .buildBtn {
+        display: flex;
+        padding: $spacing-sm $spacing-md;
+        justify-content: center;
+        align-items: center;
+        gap: $spacing-xs;
+        border-radius: $border-radius-base;
+        border: $border-width-thin solid $cool-green-600;
+        background: $cool-green-600;
+        color: $color-white;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-xs;
+      }
+
+      .editButton {
+        display: flex;
+        padding: $spacing-sm $spacing-md;
+        justify-content: center;
+        align-items: center;
+        gap: $spacing-xs;
+        border-radius: $border-radius-base;
+        border: $border-width-thin solid $cool-green-600;
+        background: $color-white;
+        color: $cool-green-600;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-xs;
+      }
+
+      .deleteBtn {
+        display: flex;
+        padding: $spacing-sm $spacing-md;
+        justify-content: center;
+        align-items: center;
+        gap: $spacing-xs;
+        border-radius: $border-radius-base;
+        border: $border-width-thin solid $color-error;
+        background: $color-white;
+        color: $color-error;
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-xs;
+      }
+    }
+  }
+}
+
+.requestMeta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  margin-top: $spacing-xxxs-medium;
+}
+
+.requestDate {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xxxs-medium;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+  color: $color-gray-dark;
+}
+
+.calendarIcon {
+  width: $icon-size-regular;
+  height: $icon-size-regular;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: $icon-size-regular !important;
+    height: $icon-size-regular !important;
+    display: block;
+    object-fit: contain;
+  }
+}
+
+.statusChip {
+  font-size: $font-size-xxs;
+  font-weight: $font-weight-medium;
+  padding: $spacing-xxxs-small $spacing-xs;
+  border-radius: 999px;
+}
+
+.statusChip--green {
+  background: $color-success-bg;
+  color: $color-success-dark;
+}
+
+.statusChip--yellow {
+  background: $color-warning-bg;
+  color: $color-warning-dark;
+}
+
+.statusChip--red {
+  background: $color-error-bg;
+  color: $color-error;
+}
+
+.requestSummaryBox {
+  border: $border-width-thin solid $color-border-section;
+  border-radius: $border-radius-xl;
+  padding: $spacing-lg;
+  width: 100%;
+}
+
+.requestSummaryGrid {
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 1fr) minmax(200px, 1fr) minmax(235px, 1fr)
+    minmax(150px, 1fr) minmax(150px, 1fr);
+  gap: $spacing-lg;
+
+  label {
+    color: $color-gray-dark;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xxxs-medium;
+    flex-wrap: wrap;
+  }
+
+  p {
+    color: $color-content-primary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    margin-top: $spacing-xxxs;
+    margin-bottom: 0;
+  }
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.profileInfo {
+  display: flex;
+  padding: $spacing-lg;
+  align-items: flex-start;
+  row-gap: $spacing-xl;
+  border-radius: $border-radius-xl;
+  border: $border-width-thin solid $color-border-section;
+  width: 100%;
+  align-self: stretch;
+  flex-wrap: wrap;
+
+  .infoItem {
+    display: flex;
+    width: 240px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xxxs;
+
+    .labelWithIcon {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xxxs;
+    }
+
+    h4 {
+      color: $color-gray-dark;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+    }
+
+    p {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+      overflow-wrap: anywhere;
+      white-space: nowrap;
+    }
+  }
+}
+
+.impactCategoryWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+  align-self: stretch;
+}
+
+@include comparePendingSubmissionStyles();
+
+.categoryTitle {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: $spacing-md;
+
+  h1 {
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .submissionStatusWrap {
+    display: flex;
+    padding: $spacing-xxs $spacing-xxxs-medium;
+    align-items: center;
+    gap: $spacing-xxxs-medium;
+    border-radius: $border-radius-base;
+    color: $color-content-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: normal;
+  }
+}
+
+.submissionStatusWrap--grey {
+  background: $color-platinum-100;
+}
+
+.submissionStatusWrap--yellow {
+  background: $color-warning-bg;
+}
+
+.submissionStatusWrap--purple {
+  background: $color-accent-2-bg;
+}
+
+.submissionStatusWrap--green {
+  background: $color-success-bg;
+}
+.dotGrey {
+  width: 6px;
+  height: 6px;
+  aspect-ratio: 1/1;
+  background: $color-gray;
+  border-radius: $border-radius-base;
+}
+
+.dotBase {
+  width: 6px;
+  height: 6px;
+  aspect-ratio: 1/1;
+  border-radius: $border-radius-base;
+}
+.dotGrey {
+  @extend .dotBase;
+  background: $color-gray;
+}
+
+.dotYellow {
+  @extend .dotBase;
+  background: $color-warning-light;
+}
+
+.dotPurple {
+  @extend .dotBase;
+  background: $color-accent-2;
+}
+
+.dotGreen {
+  @extend .dotBase;
+  background: $color-success-dark;
+}
+.categoryContentWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  align-self: stretch;
+
+  width: 100%;
+}
+
+.categoryContentWrapper > * {
+  flex: 0 0 calc((100% - 32px) / 3);
+  max-width: calc((100% - 32px) / 3);
+  width: calc((100% - 32px) / 3);
+  min-width: calc((100% - 32px) / 3);
+}
+
+.categoryContentWrapperLoading > * {
+  flex: 1 1 100%;
+  max-width: 100%;
+  width: 100%;
+  min-width: 100%;
+}
+
+.previousDataSection {
+  width: 100%;
+  margin-top: $spacing-lg;
+}
+
+.previousDataBody {
+  padding: 0 $spacing-md $spacing-md;
+}
+
+.modalWrapper h2 {
+  color: $color-black;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-base;
+}
+
+.removeButton {
+  border-radius: $border-radius-base !important;
+  background: $color-error !important;
+}
+
+.infoIcon {
+  margin-bottom: $spacing-xxxs-small;
+  display: block;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.categoryContentWrapper.categoryContentWrapper > * > :first-child {
+  flex: 0 0 auto;
+}

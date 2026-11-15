@@ -1,0 +1,142 @@
+@use '@styles/abstracts' as *;
+
+@use '@styles/abstracts/variables' as *;
+.wrapper {
+  background: $color-white;
+  border-radius: 10px;
+  padding: $spacing-3xl $spacing-xl 0 $spacing-xl;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contentWrapper {
+  display: flex;
+  padding: $spacing-xl;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-3xl;
+  align-self: stretch;
+  border-radius: $border-radius-xxl;
+  border: $border-width-thin solid $color-gray-border-light;
+}
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  align-self: stretch;
+  .profileImg {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 93.75px;
+  }
+  .companyInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .companyNameWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xs;
+
+    .companyName {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+      overflow-wrap: anywhere;
+      max-width: 422px;
+      display: block;
+    }
+    p {
+      display: flex;
+      gap: $spacing-xxxs;
+      align-items: center;
+      color: #596e67;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+    }
+  }
+
+  .editBtn {
+    display: flex;
+    padding: $spacing-sm $spacing-md;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-xs;
+    border-radius: $border-radius-base;
+    border: $border-width-thin solid $color-primary;
+    background: $color-white;
+    color: $color-primary;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-xs; /* 114.286% */
+    cursor: pointer;
+
+    transition: 0.2s;
+  }
+}
+
+.infoGrid {
+  display: flex;
+
+  align-items: flex-start;
+  row-gap: $spacing-3xl;
+  align-self: stretch;
+  flex-wrap: wrap;
+  .infoItem {
+    display: flex;
+    width: 220px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xxxs;
+    .labelWithIcon {
+      display: flex;
+
+      gap: $spacing-xxxs;
+    }
+    .infoIcon {
+      display: block;
+
+      font-size: 0.85rem;
+      margin-left: 5px;
+      cursor: pointer;
+      margin-top: $spacing-xxs;
+    
+    }
+
+    h4 {
+      color: $color-gray-dark;
+      font-family: $font-family-base;
+      font-size: $font-size-xs;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+    }
+
+    p {
+      color: $color-content-primary;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-medium;
+      line-height: normal;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+  }
+}
