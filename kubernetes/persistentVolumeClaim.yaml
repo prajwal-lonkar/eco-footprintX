@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc
-  namespace: eco-footprintX
+  namespace: eco-footprintx
 spec:
   accessModes:
     - ReadWriteOnce
