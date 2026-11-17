@@ -45,10 +45,11 @@ pipeline {
             }
         }
 
-        stage('OWASP: Dependency check') {
-            steps {
-                dependencyCheck additionalArguments: '--scan ./backend --scan ./frontend --format XML --format HTML', odcInstallation: 'OWASP'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+       stage("OWASP: Dependency check"){
+            steps{
+                script{
+                    owasp_dependency()
+                }
             }
         }
         
