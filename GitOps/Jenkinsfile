@@ -39,7 +39,7 @@ pipeline {
                 script{
                     dir('kubernetes'){
                         sh """
-                            sed -i -e s/eco-footprintX-backend-beta.*/eco-footprintX-backend-beta:${params.BACKEND_DOCKER_TAG}/g backend.yaml
+                            sed -i -e s/eco-footprintx-backend-beta.*/eco-footprintx-backend-beta:${params.BACKEND_DOCKER_TAG}/g backend.yaml
                         """
                     }
                     
