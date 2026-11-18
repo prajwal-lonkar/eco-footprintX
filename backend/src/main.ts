@@ -11,7 +11,7 @@ import { ConfigService } from '@nestjs/config';
 import { loadAwsSecrets } from './config//aws/aws-secrets-loader';
 
 async function bootstrap() {
-  const isLocal = process.env.APP_ENV === 'local';
+  const isLocal = true;
 
   if (!isLocal) {
     console.log('Loading AWS Secrets Manager...');
