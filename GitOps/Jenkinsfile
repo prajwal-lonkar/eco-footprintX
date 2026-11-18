@@ -45,7 +45,7 @@ pipeline {
                     
                     dir('kubernetes'){
                         sh """
-                            sed -i -e s/eco-footprintX-frontend-beta.*/eco-footprintX-frontend-beta:${params.FRONTEND_DOCKER_TAG}/g frontend.yaml
+                            sed -i -e s/eco-footprintx-frontend-beta.*/eco-footprintX-frontend-beta:${params.FRONTEND_DOCKER_TAG}/g frontend.yaml
                         """
                     }
                     
