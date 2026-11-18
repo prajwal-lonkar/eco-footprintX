@@ -110,8 +110,8 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("eco-footprintX-backend-beta","${params.BACKEND_DOCKER_TAG}","prajwal007docker") 
-                    docker_push("eco-footprintX-frontend-beta","${params.FRONTEND_DOCKER_TAG}","prajwal007docker")
+                    docker_push("eco-footprintx-backend-beta","${params.BACKEND_DOCKER_TAG}","prajwal007docker") 
+                    docker_push("eco-footprintx-frontend-beta","${params.FRONTEND_DOCKER_TAG}","prajwal007docker")
                 }
             }
         }
