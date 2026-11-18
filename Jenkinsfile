@@ -97,11 +97,11 @@ pipeline {
             steps{
                 script{
                         dir('backend'){
-                            docker_build("eco-footprintX-backend-beta","${params.BACKEND_DOCKER_TAG}","prajwal007docker")
+                            docker_build("eco-footprintx-backend-beta","${params.BACKEND_DOCKER_TAG}","prajwal007docker")
                         }
                     
                         dir('frontend'){
-                            docker_build("eco-footprintX-frontend-beta","${params.FRONTEND_DOCKER_TAG}","prajwal007docker")
+                            docker_build("eco-footprintx-frontend-beta","${params.FRONTEND_DOCKER_TAG}","prajwal007docker")
                         }
                 }
             }
