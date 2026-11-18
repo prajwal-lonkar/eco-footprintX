@@ -4,10 +4,10 @@ export const loadAwsSecrets = async (): Promise<Record<string, string>> => {
   const secretId = process.env.AWS_SECRET_ID;
   const region = process.env.AWS_REGION;
 
-  // if (!secretId || !region) {
-  //   console.warn('AWS secrets not loaded — AWS_SECRET_ID or AWS_REGION missing.');
-  //   return {};
-  // }
+  if (!secretId && !region) {
+    console.warn('AWS secrets not loaded — AWS_SECRET_ID or AWS_REGION missing.');
+    return {};
+  }
 
   try {
     const client = new SecretsManagerClient({ region });
