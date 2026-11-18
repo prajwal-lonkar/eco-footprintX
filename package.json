@@ -10,4 +10,8 @@
     "install-backend": "cd backend && npm i",
     "installer": "npm i && npm run install-backend && npm run install-frontend"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 739f0c561e463dca6fec42c018cfde6a19f07029
