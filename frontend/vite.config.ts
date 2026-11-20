@@ -20,6 +20,16 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          router: ['react-router', 'react-router-dom'],
+        },
+      },
+    },
+  },
   preview: {
     host: true,
     port: 4173,
