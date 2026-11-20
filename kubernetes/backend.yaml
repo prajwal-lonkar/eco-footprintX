@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: prajwal007docker/eco-footprintx-backend-beta:v2.3
+          image: prajwal007docker/eco-footprintx-backend-beta:v2.4
           ports:
             - containerPort: 8080
           envFrom:
