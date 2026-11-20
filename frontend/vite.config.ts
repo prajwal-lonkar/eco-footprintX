@@ -20,4 +20,15 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+  preview: {
+    host: true,
+    port: 4173,
+    allowedHosts: [
+      'frontend-service',
+      '3.108.5.59',
+      '35.154.220.142',
+      'localhost',
+      '127.0.0.1',
+    ],
+  },
 });
