@@ -21,6 +21,9 @@ spec:
           image: prajwal007docker/eco-footprintx-backend-beta:v2.3
           ports:
             - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: eco-footprint-secrets
 ---
 apiVersion: v1
 kind: Service
