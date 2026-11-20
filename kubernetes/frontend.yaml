@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: prajwal007docker/eco-footprintx-frontend-beta:v2.9
+          image: prajwal007docker/eco-footprintx-frontend-beta:v3.0
           ports:
             - containerPort: 5173
 ---
