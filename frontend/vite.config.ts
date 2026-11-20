@@ -20,6 +20,9 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+  build: {
+    sourcemap: true,
+  },
   preview: {
     host: true,
     port: 4173,
