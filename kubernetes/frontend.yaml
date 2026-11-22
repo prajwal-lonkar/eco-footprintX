@@ -20,7 +20,14 @@ spec:
         - name: frontend
           image: prajwal007docker/eco-footprintx-frontend-beta:v3.3
           ports:
-            - containerPort: 5173
+            - containerPort: 4173
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
 ---
 apiVersion: v1
 kind: Service
