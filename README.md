@@ -1,12 +1,3 @@
-# Hi, I'm Pranjal 👋
-
-Backend & DevOps Engineer with 3+ years of experience building cloud-native services, automating CI/CD and GitOps pipelines, and operating Kubernetes workloads on AWS.
-
-- 🛠️ **Core Stack:** Node.js, NestJS, MongoDB, Redis, Docker, Kubernetes (EKS), ArgoCD, Jenkins
-- 🔒 **DevSecOps & Quality:** SonarQube, Trivy, OWASP Dependency-Check, GitOps workflows
-- 📊 **Observability & Ops:** Prometheus, Grafana, Linux networking & troubleshooting, AWS (`ap-south-1`)
-
----
 
 ## Featured Project: Eco FootprintX — End-to-End CI/CD & GitOps on AWS EKS
 
